@@ -1,0 +1,138 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:versitaletech@gmail.com
+X-WR-TIMEZONE:America/Puerto_Rico
+BEGIN:VEVENT
+DTSTART:20250810T133000Z
+DTEND:20250810T140000Z
+DTSTAMP:20251024T063857Z
+ORGANIZER;CN=Versitale:mailto:versitaletech@gmail.com
+UID:i6465og1vkqktb5u4top924j38@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=ll
+ oyddsivo@gmail.com;X-NUM-GUESTS=0:mailto:lloyddsivo@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Versit
+ ale;X-NUM-GUESTS=0:mailto:versitaletech@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/qon-thib-qhn
+CREATED:20250809T182007Z
+DESCRIPTION:<p><b>Event Name</b><br> Versitale  (<a href="https://calendly.
+ com/booking-badge?utm_medium=product_referral&amp\;utm_source=calendar_invi
+ tation&amp\;utm_campaign=invitee_html_emails&amp\;utm_content=powered_by_ca
+ lendly">Powered by Calendly</a>)</p><p></p><p><br></p><p><b>Location</b>\n 
+    This is a Google Meet web conference.<br>\n    You can join this meeting
+  from your computer\, tablet\, or smartphone.<br>\n    https://calendly.com
+ /events/0def1809-8e48-4728-9762-e88f2b829b35/google_meet<br></p><p><b>Quest
+ ions And Answers</b>\nTo ensure we meet your needs\, please let us know the
+  topics you'd like to discuss during your session. This will help us prepar
+ e and make the most of our time together.: I want to use chatbots in our bu
+ siness <br>\n<br>\nWhich of these topics are you interested in?: Custom Cha
+ tbots <br></p>\n<br>\n<b>Need to make changes to this event?</b>\n<a href="
+ https://calendly.com/cancellations/683cfb51-131a-42f2-bec7-aced7e8671fe">Ca
+ ncel</a>\n<a href="https://calendly.com/reschedulings/683cfb51-131a-42f2-be
+ c7-aced7e8671fe">Reschedule</a>\n\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: h
+ ttps://meet.google.com/qon-thib-qhn\n\nLearn more about Meet at: https://su
+ pport.google.com/a/users/answer/9282720\n\nPlease do not edit this section.
+ \n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~::~:~::-
+LAST-MODIFIED:20250809T182007Z
+LOCATION:Google Meet (instructions in description)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Lloyd  and Versitale
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250812T130000Z
+DTEND:20250812T133000Z
+DTSTAMP:20251024T063857Z
+ORGANIZER;CN=Versitale:mailto:versitaletech@gmail.com
+UID:q3b0dhdjf9qf9f08sjdr0jhjpc@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=gr
+ egory.sivo@gmail.com;X-NUM-GUESTS=0:mailto:gregory.sivo@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Versit
+ ale;X-NUM-GUESTS=0:mailto:versitaletech@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/dkx-zouj-rmk
+CREATED:20250811T212118Z
+DESCRIPTION:Event Name\nVersitale\n\n\nLocation: This is a Google Meet web 
+ conference.\nYou can join this meeting from your computer\, tablet\, or sma
+ rtphone.\nhttps://calendly.com/events/659c46a4-3638-43e6-8994-ccf15bd592cb/
+ google_meet\n\nTo ensure we meet your needs\, please let us know the topics
+  you'd like to discuss during your session. This will help us prepare and m
+ ake the most of our time together.: 1\n\nWhich of these topics are you inte
+ rested in?: Website Creation\n\nNeed to make changes to this event?\nCancel
+ : https://calendly.com/cancellations/db040803-5681-4366-af89-b197aa0ab860\n
+ Reschedule: https://calendly.com/reschedulings/db040803-5681-4366-af89-b197
+ aa0ab860\n\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/
+ dkx-zouj-rmk\n\nLearn more about Meet at: https://support.google.com/a/user
+ s/answer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20250811T212119Z
+LOCATION:Google Meet (instructions in description)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Gregory Sivo and Versitale
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250923T053000Z
+DTEND:20250923T063000Z
+DTSTAMP:20251024T063857Z
+UID:0v0io3snac6kp9d9e9jobk26hg@google.com
+CREATED:20250824T112304Z
+LAST-MODIFIED:20250824T112305Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:30 Day challenge 12 hour work 
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20250824T090000Z
+DTEND:20250824T110000Z
+DTSTAMP:20251024T063857Z
+UID:27nd7b51falpn11he2de2mpd1v@google.com
+CREATED:20250824T112400Z
+LAST-MODIFIED:20250824T112408Z
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:Info/read/Charts/Videos
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20251018T170000Z
+DTEND:20251018T173000Z
+DTSTAMP:20251024T063857Z
+ORGANIZER;CN=Versitale:mailto:versitaletech@gmail.com
+UID:g9lvtju7p9pknbo5d5jqelfepo@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=sh
+ erwin_howell@yahoo.com;X-NUM-GUESTS=0:mailto:sherwin_howell@yahoo.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=Versit
+ ale;X-NUM-GUESTS=0:mailto:versitaletech@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/ycf-aift-dbs
+CREATED:20251015T022137Z
+DESCRIPTION:Event Name\nVersitale\n\n\nLocation: This is a Google Meet web 
+ conference.\nYou can join this meeting from your computer\, tablet\, or sma
+ rtphone.\nhttps://calendly.com/events/a4294ebe-f65b-4493-bbe3-a85a5789a5fe/
+ google_meet\n\nTo ensure we meet your needs\, please let us know the topics
+  you'd like to discuss during your session. This will help us prepare and m
+ ake the most of our time together.: Commercial electrical capacity upgrade 
+ inspections\n\nWhich of these topics are you interested in?: AI Workflows\n
+ \nNeed to make changes to this event?\nCancel: https://calendly.com/cancell
+ ations/114e1389-cad3-417b-8aaf-fb695017de1f\nReschedule: https://calendly.c
+ om/reschedulings/114e1389-cad3-417b-8aaf-fb695017de1f\n\nPowered by Calendl
+ y.com\n\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~::~:~::-\nJoin with Google Meet: https://meet.google.com/ycf
+ -aift-dbs\n\nLearn more about Meet at: https://support.google.com/a/users/a
+ nswer/9282720\n\nPlease do not edit this section.\n-::~:~::~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20251015T022137Z
+LOCATION:Google Meet (instructions in description)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Sherwin Howell and Versitale
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
