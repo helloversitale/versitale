@@ -1,8 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
-import heroBackground from "@/assets/hero-ai-background.jpg";
+import { useState, useEffect } from "react";
 
 export const HeroSection = () => {
+  const [heroBackground, setHeroBackground] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    import('@/assets/hero-ai-background.jpg')
+      .then((module) => setHeroBackground(module.default))
+      .catch(() => {
+        console.warn('Hero background image not found, using gradient fallback');
+        setHeroBackground(undefined);
+      });
+  }, []);
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -19,10 +29,12 @@ export const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center hero-gradient pt-20">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{ backgroundImage: `url(${heroBackground})` }}
-      />
+      {heroBackground && (
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: `url(${heroBackground})` }}
+        />
+      )}
 
       <div className="relative z-10 container px-4 text-center">
         <div className="max-w-5xl mx-auto">

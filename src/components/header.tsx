@@ -44,6 +44,14 @@ export const Header = () => {
                 src="/LogoVersitaletransparent.png"
                 alt="Versitale"
                 className="h-16 w-auto object-contain hover:opacity-80 transition-opacity"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = document.createElement('div');
+                  fallback.className = 'text-2xl font-bold text-primary';
+                  fallback.textContent = 'Versitale';
+                  target.parentElement?.appendChild(fallback);
+                }}
               />
             </button>
           </div>
