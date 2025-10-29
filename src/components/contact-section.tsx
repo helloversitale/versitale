@@ -244,7 +244,6 @@ export const ContactSection = () => {
                       <SelectItem value="healthcare">Healthcare</SelectItem>
                       <SelectItem value="dental-clinics">Dental Clinics</SelectItem>
                       <SelectItem value="real-estate">Real Estate</SelectItem>
-                      <SelectItem value="professional-services">Professional Services</SelectItem>
                       <SelectItem value="hospitality">Hospitality</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
