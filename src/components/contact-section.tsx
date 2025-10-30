@@ -50,12 +50,12 @@ export const ContactSection = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          fullName: formData.name,
-          email: formData.email,
-          companyName: formData.company,
-          industry: formData.industry,
-          biggestChallenge: formData.challenge,
-          submittedAt: new Date().toISOString()
+          'Name': formData.name,
+          'Email Address': formData.email,
+          'Company Name': formData.company,
+          'Industry': formData.industry,
+          'Biggest Challenge': formData.challenge,
+          'submittedAt': new Date().toISOString()
         })
       });
 
