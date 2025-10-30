@@ -105,6 +105,34 @@ export const ContactSection = () => {
         console.warn('Email notification error:', emailError);
       }
 
+      try {
+        const n8nWebhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
+        if (n8nWebhookUrl) {
+          const webhookResponse = await fetch(n8nWebhookUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name: formData.name,
+              email: formData.email,
+              company: formData.company,
+              industry: formData.industry,
+              challenge: formData.challenge,
+              sessionId: sessionId,
+              timestamp: new Date().toISOString(),
+              contactSubmissionId: data?.id
+            })
+          });
+
+          if (!webhookResponse.ok) {
+            console.warn('N8N webhook failed, but form was saved');
+          }
+        }
+      } catch (webhookError) {
+        console.warn('N8N webhook error:', webhookError);
+      }
+
       toast.success("Thank you! Redirecting to booking page...");
 
       setFormData({
