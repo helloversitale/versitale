@@ -43,10 +43,9 @@ export const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
-
-      const webhookResponse = await fetch(webhookUrl, {
+      await fetch('https://helloversitale.app.n8n.cloud/webhook/versitale-form', {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -59,10 +58,6 @@ export const ContactSection = () => {
           submittedAt: new Date().toISOString()
         })
       });
-
-      if (!webhookResponse.ok) {
-        throw new Error('Webhook submission failed');
-      }
 
       toast.success("Thank you! Redirecting to booking page...");
 
