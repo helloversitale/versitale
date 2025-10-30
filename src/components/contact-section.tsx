@@ -5,12 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Calendar, MapPin, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
-
-function generateSessionId(): string {
-  return crypto.randomUUID();
-}
 
 export const ContactSection = () => {
   const navigate = useNavigate();
@@ -47,90 +42,26 @@ export const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    const sessionId = generateSessionId();
-
     try {
-      const { data, error } = await supabase
-        .from('contact_submissions')
-        .insert([{
-          name: formData.name,
+      const webhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
+
+      const webhookResponse = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.name,
           email: formData.email,
-          company: formData.company,
+          companyName: formData.company,
           industry: formData.industry,
-          challenge: formData.challenge,
-          calendar_session_id: sessionId
-        }])
-        .select('id')
-        .maybeSingle();
+          biggestChallenge: formData.challenge,
+          submittedAt: new Date().toISOString()
+        })
+      });
 
-      if (error) {
-        console.error('Database error:', error);
-        toast.error("Failed to submit form. Please try again.");
-        setIsSubmitting(false);
-        return;
-      }
-
-      if (sessionId && data?.id) {
-        await supabase
-          .from('booking_sessions')
-          .insert({
-            contact_submission_id: data.id,
-            session_id: sessionId,
-            form_submitted_at: new Date().toISOString(),
-            status: 'started'
-          });
-      }
-
-      try {
-        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-        const emailResponse = await fetch(`${supabaseUrl}/functions/v1/send-contact-notification`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            company: formData.company,
-            industry: formData.industry,
-            challenge: formData.challenge
-          })
-        });
-
-        if (!emailResponse.ok) {
-          console.warn('Email notification failed, but form was saved');
-        }
-      } catch (emailError) {
-        console.warn('Email notification error:', emailError);
-      }
-
-      try {
-        const n8nWebhookUrl = import.meta.env.VITE_N8N_WEBHOOK_URL;
-        if (n8nWebhookUrl) {
-          const webhookResponse = await fetch(n8nWebhookUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              name: formData.name,
-              email: formData.email,
-              company: formData.company,
-              industry: formData.industry,
-              challenge: formData.challenge,
-              sessionId: sessionId,
-              timestamp: new Date().toISOString(),
-              contactSubmissionId: data?.id
-            })
-          });
-
-          if (!webhookResponse.ok) {
-            console.warn('N8N webhook failed, but form was saved');
-          }
-        }
-      } catch (webhookError) {
-        console.warn('N8N webhook error:', webhookError);
+      if (!webhookResponse.ok) {
+        throw new Error('Webhook submission failed');
       }
 
       toast.success("Thank you! Redirecting to booking page...");
@@ -144,12 +75,13 @@ export const ContactSection = () => {
       });
 
       setTimeout(() => {
-        navigate(`/booking?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}&session=${sessionId}`);
+        navigate(`/booking?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}`);
       }, 1500);
 
     } catch (error) {
       console.error('Submission error:', error);
-      toast.error("An unexpected error occurred. Please try again.");
+      toast.error("Failed to submit form. Please try again.");
+    } finally {
       setIsSubmitting(false);
     }
   };

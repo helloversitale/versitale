@@ -3,24 +3,17 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { Calendar, CheckCircle2, Loader2 } from "lucide-react";
-import { supabase } from "@/lib/supabase";
-import { toast } from "sonner";
+import { Calendar, CheckCircle2 } from "lucide-react";
 
 const Booking = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
-  const [sessionId, setSessionId] = useState("");
-  const [contactSubmissionId, setContactSubmissionId] = useState("");
-  const [isConfirmingBooking, setIsConfirmingBooking] = useState(false);
-  const [bookingConfirmed, setBookingConfirmed] = useState(false);
 
   useEffect(() => {
     const name = searchParams.get("name");
     const email = searchParams.get("email");
-    const session = searchParams.get("session");
 
     if (!name || !email) {
       navigate("/");
@@ -29,116 +22,7 @@ const Booking = () => {
 
     setUserName(name);
     setUserEmail(email);
-    if (session) {
-      setSessionId(session);
-    }
-
-    logBookingPageView(name, email, session);
   }, [searchParams, navigate]);
-
-  const logBookingPageView = async (name: string, email: string, session: string | null) => {
-    try {
-      const { data: contactData } = await supabase
-        .from('contact_submissions')
-        .select('id, calendar_session_id')
-        .eq('email', email)
-        .order('created_at', { ascending: false })
-        .limit(1)
-        .maybeSingle();
-
-      if (contactData) {
-        setContactSubmissionId(contactData.id);
-        const actualSessionId = session || contactData.calendar_session_id;
-        setSessionId(actualSessionId);
-
-        await supabase
-          .from('contact_submissions')
-          .update({
-            booking_link_clicked_at: new Date().toISOString(),
-            last_booking_page_view: new Date().toISOString()
-          })
-          .eq('id', contactData.id);
-
-        await supabase
-          .from('booking_page_views')
-          .insert({
-            contact_submission_id: contactData.id,
-            calendar_session_id: actualSessionId,
-            viewed_at: new Date().toISOString(),
-            user_agent: navigator.userAgent,
-            referrer: document.referrer
-          });
-
-        const { data: existingSession } = await supabase
-          .from('booking_sessions')
-          .select('id')
-          .eq('session_id', actualSessionId)
-          .maybeSingle();
-
-        if (!existingSession) {
-          await supabase
-            .from('booking_sessions')
-            .insert({
-              contact_submission_id: contactData.id,
-              session_id: actualSessionId,
-              form_submitted_at: contactData.created_at,
-              booking_page_viewed_at: new Date().toISOString(),
-              status: 'viewing'
-            });
-        } else {
-          await supabase
-            .from('booking_sessions')
-            .update({
-              booking_page_viewed_at: new Date().toISOString(),
-              status: 'viewing'
-            })
-            .eq('session_id', actualSessionId);
-        }
-      }
-    } catch (error) {
-      console.error('Error logging booking page view:', error);
-    }
-  };
-
-  const handleManualBookingConfirmation = async () => {
-    if (!contactSubmissionId || bookingConfirmed) return;
-
-    setIsConfirmingBooking(true);
-
-    try {
-      const { error: bookingError } = await supabase
-        .from('calendar_bookings')
-        .insert({
-          contact_submission_id: contactSubmissionId,
-          booking_type: 'manual',
-          calendar_session_id: sessionId,
-          status: 'confirmed',
-          notes: 'User manually confirmed booking completion'
-        });
-
-      if (bookingError) {
-        toast.error("Failed to confirm booking. Please try again.");
-        setIsConfirmingBooking(false);
-        return;
-      }
-
-      await supabase
-        .from('booking_sessions')
-        .update({
-          booking_completed_at: new Date().toISOString(),
-          status: 'completed'
-        })
-        .eq('session_id', sessionId);
-
-      setBookingConfirmed(true);
-      toast.success("Booking confirmed! We'll send you a confirmation email shortly.");
-    } catch (error) {
-      console.error('Error confirming booking:', error);
-      toast.error("An unexpected error occurred. Please try again.");
-    } finally {
-      setIsConfirmingBooking(false);
-    }
-  };
 
   const calendarUrl = `https://calendar.google.com/calendar/appointments/schedules/AcZssZ2Tgk2JVG0acCDBdQGC6s_7Njb8q7rsFEgmo32RXr1USgKIiOHVNvH2w_uUgdGCF337d1couIjk?gv=true&name=${encodeURIComponent(userName)}&email=${encodeURIComponent(userEmail)}`;
 
@@ -203,64 +87,15 @@ const Booking = () => {
             </div>
           </div>
 
-          {!bookingConfirmed && (
-            <div className="text-center mt-8">
-              <div className="service-card p-6 rounded-xl max-w-2xl mx-auto">
-                <h3 className="font-semibold text-gray-200 mb-3">Already Booked Your Appointment?</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  If you've completed your booking on Google Calendar, click below to confirm.
-                </p>
-                <Button
-                  onClick={handleManualBookingConfirmation}
-                  disabled={isConfirmingBooking}
-                  className="glow-ice"
-                >
-                  {isConfirmingBooking ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Confirming...
-                    </>
-                  ) : (
-                    <>
-                      <CheckCircle2 className="mr-2 h-4 w-4" />
-                      Confirm My Booking
-                    </>
-                  )}
-                </Button>
-              </div>
-            </div>
-          )}
-
-          {bookingConfirmed && (
-            <div className="text-center mt-8">
-              <div className="service-card p-6 rounded-xl max-w-2xl mx-auto bg-primary/10 border-2 border-primary/30">
-                <CheckCircle2 className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold text-gray-200 mb-2 text-xl">Booking Confirmed!</h3>
-                <p className="text-muted-foreground mb-4">
-                  Thank you for confirming your booking. We'll send you a confirmation email with all the details.
-                </p>
-                <Button
-                  variant="outline"
-                  onClick={() => navigate("/")}
-                  className="group"
-                >
-                  <span>Return to Home</span>
-                </Button>
-              </div>
-            </div>
-          )}
-
-          {!bookingConfirmed && (
-            <div className="text-center mt-4">
-              <Button
-                variant="outline"
-                onClick={() => navigate("/")}
-                className="group"
-              >
-                <span>Return to Home</span>
-              </Button>
-            </div>
-          )}
+          <div className="text-center mt-4">
+            <Button
+              variant="outline"
+              onClick={() => navigate("/")}
+              className="group"
+            >
+              <span>Return to Home</span>
+            </Button>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             <div className="service-card p-6 rounded-xl text-center">
