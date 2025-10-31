@@ -43,7 +43,7 @@ export const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      await fetch('https://helloversitale.app.n8n.cloud/webhook/b5b4fde4-7450-4518-a759-8cf9946b8617', {
+      await fetch(import.meta.env.VITE_N8N_WEBHOOK_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: {
