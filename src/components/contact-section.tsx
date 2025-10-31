@@ -43,19 +43,18 @@ export const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      await fetch(import.meta.env.VITE_N8N_WEBHOOK_URL, {
+      await fetch('https://helloversitale.app.n8n.cloud/webhook-test/b5b4fde4-7450-4518-a759-8cf9946b8617', {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          'Name': formData.name,
+          Name: formData.name,
           'Email Address': formData.email,
           'Company Name': formData.company,
-          'Industry': formData.industry,
+          Industry: formData.industry,
           'Biggest Challenge': formData.challenge,
-          'submittedAt': new Date().toISOString()
+          submittedAt: new Date().toISOString()
         })
       });
 
