@@ -42,8 +42,11 @@ export const ContactSection = () => {
 
     setIsSubmitting(true);
 
+    const submittedName = formData.name;
+    const submittedEmail = formData.email;
+
     try {
-      await fetch('https://helloversitale.app.n8n.cloud/webhook-test/b5b4fde4-7450-4518-a759-8cf9946b8617', {
+      const response = await fetch('https://helloversitale.app.n8n.cloud/webhook-test/b5b4fde4-7450-4518-a759-8cf9946b8617', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -58,6 +61,10 @@ export const ContactSection = () => {
         })
       });
 
+      if (!response.ok) {
+        throw new Error(`Webhook responded with status: ${response.status}`);
+      }
+
       toast.success("Thank you! Redirecting to booking page...");
 
       setFormData({
@@ -69,12 +76,16 @@ export const ContactSection = () => {
       });
 
       setTimeout(() => {
-        navigate(`/booking?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}`);
+        navigate(`/booking?name=${encodeURIComponent(submittedName)}&email=${encodeURIComponent(submittedEmail)}`);
       }, 1500);
 
     } catch (error) {
       console.error('Submission error:', error);
-      toast.error("Failed to submit form. Please try again.");
+      if (error instanceof Error) {
+        toast.error(`Failed to submit: ${error.message}`);
+      } else {
+        toast.error("Network error. Please check your connection and try again.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -190,7 +201,11 @@ export const ContactSection = () => {
                   <label htmlFor="industry" className="block text-sm font-medium mb-2 text-gray-200">
                     Industry *
                   </label>
-                  <Select onValueChange={(value) => handleSelectChange("industry", value)} required>
+                  <Select
+                    value={formData.industry}
+                    onValueChange={(value) => handleSelectChange("industry", value)}
+                    required
+                  >
                     <SelectTrigger className="bg-input border-border text-foreground">
                       <SelectValue placeholder="Select industry" />
                     </SelectTrigger>
