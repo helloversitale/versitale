@@ -58,7 +58,7 @@ export const ServicesSection = () => {
       title: "Custom AI Workflows",
       description: "Need something specific? We'll tailor a system just for your business.",
       includes: [
-        "Bespoke Integrations (CRM, ERP, etc.)",
+        "API-first architecture for seamless data flow across your tech stack",
         "Hybrid Voice + Chat Flows",
         "Advanced Logic & Routing",
         "Human-in-the-Loop Escalations",
