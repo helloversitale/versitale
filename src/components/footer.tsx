@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export const Footer = () => {
@@ -33,7 +33,7 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary/50 border-t border-border py-16 px-8 lg:px-16">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <button onClick={handleLogoClick} className="cursor-pointer">
@@ -105,32 +105,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h3 className="font-bold text-lg mb-4">Follow Us</h3>
-            <div className="flex gap-4 mb-6">
-              <a
-                href="#"
-                className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors glow-ice"
-              >
-                <Linkedin className="w-5 h-5 text-primary" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors glow-ice"
-              >
-                <Twitter className="w-5 h-5 text-primary" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors glow-ice"
-              >
-                <Facebook className="w-5 h-5 text-primary" />
-              </a>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Stay updated with the latest AI trends and solutions
-            </p>
-          </div>
         </div>
 
         <div className="border-t border-border pt-8">
