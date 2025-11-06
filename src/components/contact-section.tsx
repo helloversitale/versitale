@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Calendar, MapPin, Loader2 } from "lucide-react";
+import { Mail, Calendar, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -108,7 +108,7 @@ export const ContactSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid lg:grid-cols-2 gap-6 mb-12">
             <div className="service-card p-6 rounded-xl">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center glow-ice">
@@ -119,18 +119,6 @@ export const ContactSection = () => {
                   <a href="mailto:hello@versitale.com" className="text-primary hover:underline text-sm">
                     hello@versitale.com
                   </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="service-card p-6 rounded-xl">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center glow-ice">
-                  <MapPin className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-200">Location</h4>
-                  <p className="text-gray-400 text-sm">Aruba & Globally</p>
                 </div>
               </div>
             </div>
