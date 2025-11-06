@@ -48,7 +48,7 @@ export const Footer = () => {
               AI Solutions That Drive Results
             </p>
             <p className="text-sm text-muted-foreground">
-              From conversational AI to full workflow automation—we design solutions that fundamentally transform your business processes and customer success.
+              From conversational AI to full workflow automation. We build solutions that transform how your business operates and serves customers.
             </p>
           </div>
 
