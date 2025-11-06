@@ -48,7 +48,7 @@ export const Footer = () => {
               AI Solutions That Drive Results
             </p>
             <p className="text-sm text-muted-foreground">
-              Proudly serving businesses in Aruba and globally with cutting-edge AI automation solutions.
+              From conversational AI to full workflow automation—we design solutions that fundamentally transform your business processes and customer success.
             </p>
           </div>
 
