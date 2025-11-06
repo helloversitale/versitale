@@ -46,7 +46,7 @@ export const ContactSection = () => {
     const submittedEmail = formData.email;
 
     try {
-      const response = await fetch('https://helloversitale.app.n8n.cloud/webhook-test/b5b4fde4-7450-4518-a759-8cf9946b8617', {
+      const response = await fetch(import.meta.env.VITE_N8N_WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
