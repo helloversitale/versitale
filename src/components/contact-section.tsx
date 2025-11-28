@@ -1,95 +1,17 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Calendar, Loader2 } from "lucide-react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
+import { Mail, Calendar } from "lucide-react";
+import { useEffect } from "react";
 
 export const ContactSection = () => {
-  const navigate = useNavigate();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    industry: "",
-    challenge: ""
-  });
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://links.versitale.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSelectChange = (name: string, value: string) => {
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.company || !formData.industry || !formData.challenge) {
-      toast.error("Please fill in all required fields");
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    const submittedName = formData.name;
-    const submittedEmail = formData.email;
-
-    try {
-      const response = await fetch(import.meta.env.VITE_N8N_WEBHOOK_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          Name: formData.name,
-          'Email Address': formData.email,
-          'Company Name': formData.company,
-          Industry: formData.industry,
-          'Biggest Challenge': formData.challenge,
-          submittedAt: new Date().toISOString()
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error(`Webhook responded with status: ${response.status}`);
-      }
-
-      toast.success("Thank you! Redirecting to booking page...");
-
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        industry: "",
-        challenge: ""
-      });
-
-      setTimeout(() => {
-        navigate(`/booking?name=${encodeURIComponent(submittedName)}&email=${encodeURIComponent(submittedEmail)}`);
-      }, 1500);
-
-    } catch (error) {
-      console.error('Submission error:', error);
-      if (error instanceof Error) {
-        toast.error(`Failed to submit: ${error.message}`);
-      } else {
-        toast.error("Network error. Please check your connection and try again.");
-      }
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <section id="contact" className="pt-0 pb-20 px-4 relative overflow-hidden">
@@ -137,114 +59,28 @@ export const ContactSection = () => {
           </div>
 
           <div className="service-card p-8 rounded-2xl">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-200">
-                    Full Name *
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-input border-border focus:border-primary transition-colors text-foreground"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-200">
-                    Email Address *
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-input border-border focus:border-primary transition-colors text-foreground"
-                    placeholder="john@company.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-2 text-gray-200">
-                    Company Name *
-                  </label>
-                  <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-input border-border focus:border-primary transition-colors text-foreground"
-                    placeholder="Your Company"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="industry" className="block text-sm font-medium mb-2 text-gray-200">
-                    Industry *
-                  </label>
-                  <Select
-                    value={formData.industry}
-                    onValueChange={(value) => handleSelectChange("industry", value)}
-                    required
-                  >
-                    <SelectTrigger className="bg-input border-border text-foreground">
-                      <SelectValue placeholder="Select industry" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="Healthcare">Healthcare</SelectItem>
-                      <SelectItem value="Dental Clinics">Dental Clinics</SelectItem>
-                      <SelectItem value="Real Estate">Real Estate</SelectItem>
-                      <SelectItem value="Hospitality">Hospitality</SelectItem>
-                      <SelectItem value="Other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="challenge" className="block text-sm font-medium mb-2 text-gray-200">
-                  Biggest Challenge *
-                </label>
-                <Textarea
-                  id="challenge"
-                  name="challenge"
-                  value={formData.challenge}
-                  onChange={handleInputChange}
-                  required
-                  rows={4}
-                  className="bg-input border-border focus:border-primary transition-colors resize-none text-foreground"
-                  placeholder="Describe your current challenges and how you think AI could help your business..."
-                />
-              </div>
-
-              <Button
-                type="submit"
-                variant="hero"
-                size="lg"
-                className="w-full text-lg py-6 h-auto glow-ice-strong"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Saving Your Information...
-                  </>
-                ) : (
-                  "Claim My Free Session"
-                )}
-              </Button>
-
-              <p className="text-xs text-center text-gray-400">
-                We respect your privacy. Your information will never be shared.
-              </p>
-            </form>
+            <iframe
+              src="https://links.versitale.com/widget/form/DwUt6J4Oah4FgMD0HqQ8"
+              style={{
+                width: '100%',
+                height: '598px',
+                border: 'none',
+                borderRadius: '3px'
+              }}
+              id="inline-DwUt6J4Oah4FgMD0HqQ8"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Website Submission"
+              data-height="598"
+              data-layout-iframe-id="inline-DwUt6J4Oah4FgMD0HqQ8"
+              data-form-id="DwUt6J4Oah4FgMD0HqQ8"
+              title="Website Submission"
+            />
           </div>
         </div>
       </div>
