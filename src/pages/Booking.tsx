@@ -22,9 +22,19 @@ const Booking = () => {
 
     setUserName(name);
     setUserEmail(email);
-  }, [searchParams, navigate]);
 
-  const calendarUrl = `https://calendar.google.com/calendar/appointments/schedules/AcZssZ2Tgk2JVG0acCDBdQGC6s_7Njb8q7rsFEgmo32RXr1USgKIiOHVNvH2w_uUgdGCF337d1couIjk?gv=true&name=${encodeURIComponent(userName)}&email=${encodeURIComponent(userEmail)}`;
+    const script = document.createElement('script');
+    script.src = 'https://links.versitale.com/js/form_embed.js';
+    script.type = 'text/javascript';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, [searchParams, navigate]);
 
   if (!userName || !userEmail) {
     return null;
@@ -72,18 +82,15 @@ const Booking = () => {
           <div className="service-card p-6 rounded-2xl mb-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
             <div className="bg-white/95 rounded-lg border-2 border-primary/20 overflow-hidden">
               <iframe
-                src={calendarUrl}
-                style={{ border: 0, minHeight: '700px' }}
+                src="https://links.versitale.com/widget/booking/k5tW4IVPbNHvga6Vnw1b"
+                style={{ border: 0, minHeight: '700px', width: '100%' }}
                 width="100%"
                 height="700"
-                frameBorder="0"
+                scrolling="no"
+                id="k5tW4IVPbNHvga6Vnw1b_calendar"
                 title="Book Your Consultation"
                 className="w-full"
               />
-            </div>
-
-            <div className="mt-6 text-center text-sm text-muted-foreground">
-              <p>Having trouble with the calendar? <a href={calendarUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Open in new window</a></p>
             </div>
           </div>
 
