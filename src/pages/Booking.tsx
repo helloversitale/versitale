@@ -13,8 +13,8 @@ const Booking = () => {
   const [userCompany, setUserCompany] = useState("");
   const [userIndustry, setUserIndustry] = useState("");
   const [userChallenge, setUserChallenge] = useState("");
-  const [isAutoFilling, setIsAutoFilling] = useState(true);
-  const [autoFillAttempted, setAutoFillAttempted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [iframeUrl, setIframeUrl] = useState("");
 
   useEffect(() => {
     const name = searchParams.get("name");
@@ -34,70 +34,33 @@ const Booking = () => {
     setUserIndustry(industry || "");
     setUserChallenge(challenge || "");
 
+    const baseUrl = "https://links.versitale.com/widget/booking/k5tW4IVPbNHvga6Vnw1b";
+    const params = new URLSearchParams();
+    params.append("name", name);
+    params.append("email", email);
+    if (company) params.append("company", company);
+    if (industry) params.append("industry", industry);
+    if (challenge) params.append("message", challenge);
+
+    setIframeUrl(`${baseUrl}?${params.toString()}`);
+
     const script = document.createElement('script');
     script.src = 'https://links.versitale.com/js/form_embed.js';
     script.type = 'text/javascript';
     script.async = true;
     document.body.appendChild(script);
 
-    const attemptAutoFill = () => {
-      if (autoFillAttempted) return;
-
-      const iframe = document.getElementById('k5tW4IVPbNHvga6Vnw1b_calendar') as HTMLIFrameElement;
-      if (!iframe) {
-        setTimeout(attemptAutoFill, 500);
-        return;
-      }
-
-      try {
-        iframe.onload = () => {
-          setTimeout(() => {
-            try {
-              const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
-
-              if (iframeDoc) {
-                const nameInput = iframeDoc.querySelector('input[name="name"], input[placeholder*="name" i], input[id*="name" i]') as HTMLInputElement;
-                const emailInput = iframeDoc.querySelector('input[name="email"], input[type="email"], input[placeholder*="email" i]') as HTMLInputElement;
-                const companyInput = iframeDoc.querySelector('input[name="company"], input[placeholder*="company" i]') as HTMLInputElement;
-                const challengeInput = iframeDoc.querySelector('textarea[name="challenge"], textarea[placeholder*="challenge" i]') as HTMLTextAreaElement;
-
-                if (nameInput) nameInput.value = name || "";
-                if (emailInput) emailInput.value = email || "";
-                if (companyInput && company) companyInput.value = company;
-                if (challengeInput && challenge) challengeInput.value = challenge;
-
-                const submitButton = iframeDoc.querySelector('button[type="submit"], input[type="submit"], button:not([type])') as HTMLButtonElement;
-                if (submitButton) {
-                  submitButton.click();
-                }
-              }
-            } catch (e) {
-              console.log('Cross-origin restriction, trying alternative method');
-            }
-
-            setAutoFillAttempted(true);
-            setTimeout(() => {
-              setIsAutoFilling(false);
-            }, 3000);
-          }, 1500);
-        };
-      } catch (e) {
-        console.log('Auto-fill attempt failed, showing form');
-        setAutoFillAttempted(true);
-        setTimeout(() => {
-          setIsAutoFilling(false);
-        }, 2000);
-      }
-    };
-
-    setTimeout(attemptAutoFill, 1000);
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
 
     return () => {
+      clearTimeout(loadingTimer);
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
     };
-  }, [searchParams, navigate, autoFillAttempted]);
+  }, [searchParams, navigate]);
 
   if (!userName || !userEmail) {
     return null;
@@ -142,7 +105,7 @@ const Booking = () => {
             </p>
           </div>
 
-          {isAutoFilling && (
+          {isLoading && (
             <div className="service-card p-12 rounded-2xl mb-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
               <div className="flex flex-col items-center justify-center py-20">
                 <div className="relative mb-8">
@@ -168,23 +131,25 @@ const Booking = () => {
             </div>
           )}
 
-          <div
-            className={`service-card p-6 rounded-2xl mb-8 animate-slide-up transition-all duration-500 ${isAutoFilling ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}
-            style={{ animationDelay: '0.1s' }}
-          >
-            <div className="bg-white/95 rounded-lg border-2 border-primary/20 overflow-hidden">
-              <iframe
-                src="https://links.versitale.com/widget/booking/k5tW4IVPbNHvga6Vnw1b"
-                style={{ border: 0, minHeight: '700px', width: '100%' }}
-                width="100%"
-                height="700"
-                scrolling="no"
-                id="k5tW4IVPbNHvga6Vnw1b_calendar"
-                title="Book Your Consultation"
-                className="w-full"
-              />
+          {!isLoading && (
+            <div
+              className="service-card p-6 rounded-2xl mb-8 animate-slide-up transition-all duration-500"
+              style={{ animationDelay: '0.1s' }}
+            >
+              <div className="bg-white/95 rounded-lg border-2 border-primary/20 overflow-hidden">
+                <iframe
+                  src={iframeUrl}
+                  style={{ border: 0, minHeight: '700px', width: '100%' }}
+                  width="100%"
+                  height="700"
+                  scrolling="no"
+                  id="k5tW4IVPbNHvga6Vnw1b_calendar"
+                  title="Book Your Consultation"
+                  className="w-full"
+                />
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="text-center mt-4">
             <Button
