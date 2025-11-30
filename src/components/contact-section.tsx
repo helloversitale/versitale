@@ -76,7 +76,7 @@ export const ContactSection = () => {
       });
 
       setTimeout(() => {
-        navigate(`/booking?name=${encodeURIComponent(submittedName)}&email=${encodeURIComponent(submittedEmail)}`);
+        navigate(`/booking?name=${encodeURIComponent(submittedName)}&email=${encodeURIComponent(submittedEmail)}&company=${encodeURIComponent(formData.company)}&industry=${encodeURIComponent(formData.industry)}&challenge=${encodeURIComponent(formData.challenge)}`);
       }, 1500);
 
     } catch (error) {
