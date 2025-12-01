@@ -13,8 +13,7 @@ const Booking = () => {
   const [userCompany, setUserCompany] = useState("");
   const [userIndustry, setUserIndustry] = useState("");
   const [userChallenge, setUserChallenge] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
-  const [iframeUrl, setIframeUrl] = useState("");
+  const [isCalendarLoading, setIsCalendarLoading] = useState(true);
 
   useEffect(() => {
     const name = searchParams.get("name");
@@ -34,28 +33,34 @@ const Booking = () => {
     setUserIndustry(industry || "");
     setUserChallenge(challenge || "");
 
-    const baseUrl = "https://links.versitale.com/widget/booking/k5tW4IVPbNHvga6Vnw1b";
-    const params = new URLSearchParams();
-    params.append("name", name);
-    params.append("email", email);
-    if (company) params.append("company", company);
-    if (industry) params.append("industry", industry);
-    if (challenge) params.append("message", challenge);
-
-    setIframeUrl(`${baseUrl}?${params.toString()}`);
+    const link = document.createElement('link');
+    link.href = 'https://calendar.google.com/calendar/scheduling-button-script.css';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
 
     const script = document.createElement('script');
-    script.src = 'https://links.versitale.com/js/form_embed.js';
-    script.type = 'text/javascript';
+    script.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
     script.async = true;
+
+    script.onload = () => {
+      const target = document.getElementById('google-calendar-target');
+      if (target && (window as any).calendar) {
+        (window as any).calendar.schedulingButton.load({
+          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2Tgk2JVG0acCDBdQGC6s_7Njb8q7rsFEgmo32RXr1USgKIiOHVNvH2w_uUgdGCF337d1couIjk?gv=true',
+          color: '#0EA5E9',
+          label: 'Book Your Consultation',
+          target,
+        });
+        setIsCalendarLoading(false);
+      }
+    };
+
     document.body.appendChild(script);
 
-    const loadingTimer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
-
     return () => {
-      clearTimeout(loadingTimer);
+      if (document.head.contains(link)) {
+        document.head.removeChild(link);
+      }
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
@@ -105,8 +110,11 @@ const Booking = () => {
             </p>
           </div>
 
-          {isLoading && (
-            <div className="service-card p-12 rounded-2xl mb-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <div
+            className="service-card p-8 rounded-2xl mb-8 animate-slide-up transition-all duration-500"
+            style={{ animationDelay: '0.1s' }}
+          >
+            {isCalendarLoading && (
               <div className="flex flex-col items-center justify-center py-20">
                 <div className="relative mb-8">
                   <div className="w-20 h-20 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
@@ -116,40 +124,26 @@ const Booking = () => {
                 </div>
 
                 <h3 className="text-2xl font-bold text-gray-200 mb-3">
-                  Completing Your Booking...
+                  Loading Calendar...
                 </h3>
 
                 <p className="text-muted-foreground text-center max-w-md mb-6">
-                  We're setting everything up for you, {userName}. Just a moment while we prepare your personalized calendar.
+                  We're preparing your personalized booking calendar, {userName}.
                 </p>
 
                 <div className="flex items-center gap-2 text-sm text-gray-400">
                   <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                  <span>Processing your information</span>
+                  <span>Setting up your appointment options</span>
                 </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {!isLoading && (
             <div
-              className="service-card p-6 rounded-2xl mb-8 animate-slide-up transition-all duration-500"
-              style={{ animationDelay: '0.1s' }}
-            >
-              <div className="bg-white/95 rounded-lg border-2 border-primary/20 overflow-hidden">
-                <iframe
-                  src={iframeUrl}
-                  style={{ border: 0, minHeight: '700px', width: '100%' }}
-                  width="100%"
-                  height="700"
-                  scrolling="no"
-                  id="k5tW4IVPbNHvga6Vnw1b_calendar"
-                  title="Book Your Consultation"
-                  className="w-full"
-                />
-              </div>
-            </div>
-          )}
+              id="google-calendar-target"
+              className="flex items-center justify-center min-h-[400px]"
+              style={{ opacity: isCalendarLoading ? 0 : 1, transition: 'opacity 0.5s' }}
+            ></div>
+          </div>
 
           <div className="text-center mt-4">
             <Button
