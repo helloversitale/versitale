@@ -86,7 +86,7 @@ const Booking = () => {
           </div>
 
           <div
-            className="service-card p-8 rounded-2xl mb-8 animate-slide-up transition-all duration-500"
+            className="bg-white p-8 rounded-2xl mb-8 animate-slide-up transition-all duration-500 shadow-lg"
             style={{ animationDelay: '0.1s' }}
           >
             {isCalendarLoading && (
@@ -98,15 +98,15 @@ const Booking = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-200 mb-3">
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">
                   Loading Calendar...
                 </h3>
 
-                <p className="text-muted-foreground text-center max-w-md mb-6">
+                <p className="text-gray-600 text-center max-w-md mb-6">
                   We're preparing your personalized booking calendar, {userName}.
                 </p>
 
-                <div className="flex items-center gap-2 text-sm text-gray-400">
+                <div className="flex items-center gap-2 text-sm text-gray-500">
                   <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                   <span>Setting up your appointment options</span>
                 </div>
