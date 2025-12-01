@@ -33,37 +33,12 @@ const Booking = () => {
     setUserIndustry(industry || "");
     setUserChallenge(challenge || "");
 
-    const link = document.createElement('link');
-    link.href = 'https://calendar.google.com/calendar/scheduling-button-script.css';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-
-    const script = document.createElement('script');
-    script.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
-    script.async = true;
-
-    script.onload = () => {
-      const target = document.getElementById('google-calendar-target');
-      if (target && (window as any).calendar) {
-        (window as any).calendar.schedulingButton.load({
-          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2Tgk2JVG0acCDBdQGC6s_7Njb8q7rsFEgmo32RXr1USgKIiOHVNvH2w_uUgdGCF337d1couIjk?gv=true',
-          color: '#0EA5E9',
-          label: 'Book Your Consultation',
-          target,
-        });
-        setIsCalendarLoading(false);
-      }
-    };
-
-    document.body.appendChild(script);
+    const loadingTimer = setTimeout(() => {
+      setIsCalendarLoading(false);
+    }, 1500);
 
     return () => {
-      if (document.head.contains(link)) {
-        document.head.removeChild(link);
-      }
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
+      clearTimeout(loadingTimer);
     };
   }, [searchParams, navigate]);
 
@@ -139,10 +114,19 @@ const Booking = () => {
             )}
 
             <div
-              id="google-calendar-target"
-              className="flex items-center justify-center min-h-[400px]"
+              className="w-full"
               style={{ opacity: isCalendarLoading ? 0 : 1, transition: 'opacity 0.5s' }}
-            ></div>
+            >
+              <iframe
+                src="https://calendar.app.google/qccDHKj6hwSqende7"
+                style={{ border: 0, minHeight: '700px', width: '100%' }}
+                width="100%"
+                height="700"
+                frameBorder="0"
+                title="Book Your Consultation"
+                className="w-full rounded-lg"
+              />
+            </div>
           </div>
 
           <div className="text-center mt-4">
