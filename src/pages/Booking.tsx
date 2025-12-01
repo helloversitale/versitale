@@ -118,10 +118,10 @@ const Booking = () => {
               style={{ opacity: isCalendarLoading ? 0 : 1, transition: 'opacity 0.5s' }}
             >
               <iframe
-                src="https://calendar.app.google/qccDHKj6hwSqende7"
-                style={{ border: 0, minHeight: '700px', width: '100%' }}
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2Tgk2JVG0acCDBdQGC6s_7Njb8q7rsFEgmo32RXr1USgKIiOHVNvH2w_uUgdGCF337d1couIjk?gv=true"
+                style={{ border: 0 }}
                 width="100%"
-                height="700"
+                height="600"
                 frameBorder="0"
                 title="Book Your Consultation"
                 className="w-full rounded-lg"
