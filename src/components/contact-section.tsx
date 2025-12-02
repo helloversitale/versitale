@@ -59,13 +59,23 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <div style={{ minHeight: '600px' }}>
+          <div style={{ minHeight: '492px' }}>
             <iframe
-              src="https://links.versitale.com/widget/booking/k5tW4IVPbNHvga6Vnw1b"
-              style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
-              scrolling="no"
-              id="k5tW4IVPbNHvga6Vnw1b_1764704608711"
-              title="Book Your Consultation"
+              src="https://links.versitale.com/widget/form/DwUt6J4Oah4FgMD0HqQ8"
+              style={{ width: '100%', height: '100%', border: 'none', borderRadius: '12px' }}
+              id="inline-DwUt6J4Oah4FgMD0HqQ8"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Website Submission "
+              data-height="492"
+              data-layout-iframe-id="inline-DwUt6J4Oah4FgMD0HqQ8"
+              data-form-id="DwUt6J4Oah4FgMD0HqQ8"
+              title="Website Submission "
             />
           </div>
         </div>
