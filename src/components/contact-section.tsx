@@ -59,7 +59,7 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-2xl shadow-lg" style={{ minHeight: '600px' }}>
+          <div style={{ minHeight: '600px' }}>
             <iframe
               src="https://links.versitale.com/widget/booking/k5tW4IVPbNHvga6Vnw1b"
               style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
