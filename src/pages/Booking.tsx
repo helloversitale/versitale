@@ -33,21 +33,12 @@ const Booking = () => {
     setUserIndustry(industry || "");
     setUserChallenge(challenge || "");
 
-    const script = document.createElement('script');
-    script.src = 'https://links.versitale.com/js/form_embed.js';
-    script.type = 'text/javascript';
-    script.async = true;
-    document.body.appendChild(script);
-
     const loadingTimer = setTimeout(() => {
       setIsCalendarLoading(false);
     }, 1500);
 
     return () => {
       clearTimeout(loadingTimer);
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
     };
   }, [searchParams, navigate]);
 
@@ -127,10 +118,11 @@ const Booking = () => {
               style={{ opacity: isCalendarLoading ? 0 : 1, transition: 'opacity 0.5s' }}
             >
               <iframe
-                src="https://links.versitale.com/widget/booking/k5tW4IVPbNHvga6Vnw1b"
-                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }}
-                scrolling="no"
-                id="k5tW4IVPbNHvga6Vnw1b_booking_page"
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2Tgk2JVG0acCDBdQGC6s_7Njb8q7rsFEgmo32RXr1USgKIiOHVNvH2w_uUgdGCF337d1couIjk?gv=true"
+                style={{ border: 0 }}
+                width="100%"
+                height="600"
+                frameBorder="0"
                 title="Book Your Consultation"
                 className="w-full rounded-lg"
               />
