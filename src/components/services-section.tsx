@@ -37,12 +37,12 @@ export const ServicesSection = () => {
     {
       icon: Search,
       title: "Win More Customers",
-      description: "Clear calls to action, WhatsApp integration, and booking options that make it easy for visitors to become paying customers.",
+      description: "Clear calls to action and booking options that make it easy for visitors to become paying customers.",
       includes: [
-        "WhatsApp click-to-chat integration",
         "Strategic call-to-action placement",
         "Booking & appointment scheduling",
-        "Conversion-optimized layouts"
+        "Conversion-optimized layouts",
+        "Lead capture forms"
       ],
       perfectFor: "Clinics, salons, tour operators, car rentals",
     }
@@ -57,7 +57,7 @@ export const ServicesSection = () => {
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Versitale gives you a complete website — designed, built, hosted, and optimized every month — so you can focus on running your business while your website runs your marketing.
+            Versitale gives you a complete website, designed, built, hosted, and optimized every month, so you can focus on running your business while your website runs your marketing.
           </p>
         </div>
 

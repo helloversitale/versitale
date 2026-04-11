@@ -42,7 +42,7 @@ export const StatsSection = () => {
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16 space-y-4 px-4">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-100 animate-slide-up">
-            Right Now, Customers Are Searching for What You Sell — and <span className="gradient-text">Finding Your Competitor Instead</span>
+            Right Now, Customers Are Searching for What You Sell and <span className="gradient-text">Finding Your Competitor Instead</span>
           </h2>
           <p className="text-lg md:text-xl text-foreground/80 max-w-4xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
             Every day, people in Aruba search Google for restaurants, plumbers, car rentals, salons, lawyers, and every other local service you can think of.
@@ -59,7 +59,7 @@ export const StatsSection = () => {
               </div>
               <div className="space-y-4">
                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                  If your business doesn't have a professional website — or has one that hasn't been updated since 2019 — those customers go somewhere else.
+                  If your business doesn't have a professional website, or has one that hasn't been updated since 2019, those customers go somewhere else.
                 </p>
                 <p className="text-xl md:text-2xl font-semibold text-primary">
                   It's not that your service is worse. It's that you're invisible.

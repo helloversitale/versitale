@@ -113,7 +113,7 @@ export const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © 2025 Versitale — Built in Aruba. For Aruba.
+              © 2025 Versitale, Built in Aruba. For Aruba.
             </p>
             <div className="flex gap-6">
               <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">

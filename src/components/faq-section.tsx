@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: "Do I need to be a tech expert to manage the site?",
-    answer: "Not at all. We handle everything from hosting and security to technical updates and SEO. If you need to change a price, add a photo, or update your hours, just send us a message — your monthly plan covers updates so you never have to touch a line of code."
+    answer: "Not at all. We handle everything from hosting and security to technical updates and SEO. If you need to change a price, add a photo, or update your hours, just send us a message; your monthly plan covers updates so you never have to touch a line of code."
   },
   {
     question: "Is hosting and security included in the monthly price?",

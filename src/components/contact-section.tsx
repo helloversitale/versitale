@@ -78,7 +78,7 @@ export const ContactSection = () => {
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Fill out the form below or chat with us on WhatsApp to start your journey 
+            Fill out the form below to start your journey 
             toward a professional, customer-winning online presence in Aruba.
           </p>
         </div>
@@ -121,7 +121,7 @@ export const ContactSection = () => {
                   "100% Custom Design",
                   "Managed Hosting Included",
                   "Local SEO Strategy",
-                  "WhatsApp Integration Ready"
+                  "Mobile-First Experience"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-gray-400">
                     <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />

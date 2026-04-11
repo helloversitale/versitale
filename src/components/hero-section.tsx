@@ -45,7 +45,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in opacity-0 [animation-delay:0.9s] [animation-fill-mode:forwards]">
-            We build, host, and optimize websites for businesses in Aruba — so you show up when people search, 
+            We build, host, and optimize websites for businesses in Aruba so you show up when people search, 
             look professional when they land, and get the call when they're ready to buy.
           </p>
 
