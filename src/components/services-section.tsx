@@ -20,7 +20,6 @@ export const ServicesSection = () => {
         "Keyword-rich content",
         "Monthly performance tracking"
       ],
-      perfectFor: "Restaurants, retail shops, local service providers",
     },
     {
       icon: Server,
@@ -32,7 +31,6 @@ export const ServicesSection = () => {
         "Premium animations & UX",
         "Modern typography & branding"
       ],
-      perfectFor: "Hotels, real estate agencies, professional firms",
     },
     {
       icon: Search,
@@ -44,7 +42,6 @@ export const ServicesSection = () => {
         "Conversion-optimized layouts",
         "Lead capture forms"
       ],
-      perfectFor: "Clinics, salons, tour operators, car rentals",
     }
   ];
 
@@ -78,7 +75,7 @@ export const ServicesSection = () => {
                 {service.description}
               </p>
 
-              <div className="mb-6">
+              <div className="">
                 <h4 className="font-semibold mb-3 text-foreground flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-primary" />
                   What's Included:
@@ -91,13 +88,6 @@ export const ServicesSection = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className="mt-auto pt-6 border-t border-border">
-                <p className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-primary">Perfect for: </span>
-                  {service.perfectFor}
-                </p>
               </div>
             </div>
           ))}

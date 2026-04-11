@@ -83,57 +83,9 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 max-w-5xl mx-auto">
-          {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-6">
-            <h3 className="text-2xl font-semibold mb-8 text-gray-100">Contact Information</h3>
-            
-            <div className="service-card p-6 rounded-xl group">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Mail className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-200">Email Us</h4>
-                  <a href="mailto:hello@versitale.com" className="text-primary hover:underline text-sm font-medium">
-                    hello@versitale.com
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="service-card p-6 rounded-xl group">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Calendar className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-200">Quick Response</h4>
-                  <p className="text-gray-400 text-sm">Within 24 business hours</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-8 bg-gradient-to-br from-primary/5 to-transparent border border-primary/10 rounded-2xl mt-8">
-              <h4 className="text-lg font-medium text-primary mb-4">What You Get:</h4>
-              <ul className="space-y-3">
-                {[
-                  "100% Custom Design",
-                  "Managed Hosting Included",
-                  "Local SEO Strategy",
-                  "Mobile-First Experience"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-400">
-                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
+        <div className="max-w-2xl mx-auto">
           {/* Form */}
-          <div className="lg:col-span-3">
+          <div className="w-full">
             <div className="service-card p-8 rounded-2xl relative overflow-hidden">
               {isSuccess ? (
                 <div className="py-12 text-center animate-fade-in">
@@ -142,7 +94,7 @@ export const ContactSection = () => {
                   </div>
                   <h3 className="text-2xl font-bold mb-4">Request Received!</h3>
                   <p className="text-muted-foreground mb-8">
-                    Thank you for reaching out. Our team of AI experts will review your request and contact you shortly.
+                    Thank you for reaching out. Our team will review your request and contact you shortly.
                   </p>
                   <Button 
                     variant="outline" 
