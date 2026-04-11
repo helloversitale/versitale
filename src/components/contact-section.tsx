@@ -74,12 +74,12 @@ export const ContactSection = () => {
       <div className="container mx-auto max-w-6xl relative z-10 py-20">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Accelerate Your Business with <span className="gradient-text">AI?</span>
+            Ready to Get Your Business the <span className="gradient-text">Website It Deserves?</span>
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Get a free consultation and discover how AI can transform your operations,
-            generate more leads, and drive unprecedented growth.
+            Fill out the form below or chat with us on WhatsApp to start your journey 
+            toward a professional, customer-winning online presence in Aruba.
           </p>
         </div>
 
@@ -115,13 +115,13 @@ export const ContactSection = () => {
             </div>
 
             <div className="p-8 bg-gradient-to-br from-primary/5 to-transparent border border-primary/10 rounded-2xl mt-8">
-              <h4 className="text-lg font-medium text-primary mb-4">Why Book a Call?</h4>
+              <h4 className="text-lg font-medium text-primary mb-4">What You Get:</h4>
               <ul className="space-y-3">
                 {[
-                  "Free AI readiness assessment",
-                  "Process automation roadmap",
-                  "ROI projection for AI projects",
-                  "Direct access to AI experts"
+                  "100% Custom Design",
+                  "Managed Hosting Included",
+                  "Local SEO Strategy",
+                  "WhatsApp Integration Ready"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-gray-400">
                     <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
@@ -223,10 +223,10 @@ export const ContactSection = () => {
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent className="bg-zinc-900 border-white/10 text-gray-200">
-                                <SelectItem value="ai-automation">AI Automation</SelectItem>
-                                <SelectItem value="custom-llm">Custom LLM Development</SelectItem>
-                                <SelectItem value="consulting">AI Strategy Consulting</SelectItem>
-                                <SelectItem value="leads">AI Lead Generation</SelectItem>
+                                <SelectItem value="web-design">Website Design & Development</SelectItem>
+                                <SelectItem value="hosting">Hosting & Maintenance Plan</SelectItem>
+                                <SelectItem value="seo">Local SEO Optimization</SelectItem>
+                                <SelectItem value="general">General Inquiry</SelectItem>
                               </SelectContent>
                             </Select>
                             <FormMessage />

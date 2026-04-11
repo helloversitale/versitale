@@ -40,48 +40,33 @@ export const StatsSection = () => {
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary animate-fade-in">
-            AI Solutions That Drive Real Results
+        <div className="text-center mb-16 space-y-4 px-4">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-100 animate-slide-up">
+            Right Now, Customers Are Searching for What You Sell — and <span className="gradient-text">Finding Your Competitor Instead</span>
           </h2>
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Transform your business with intelligent automation and data-driven insights
+          <p className="text-lg md:text-xl text-foreground/80 max-w-4xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
+            Every day, people in Aruba search Google for restaurants, plumbers, car rentals, salons, lawyers, and every other local service you can think of.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-          {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              className={`group relative transform transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
-            >
-              <div className="relative h-full bg-background/40 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 group-hover:bg-background/60">
-                <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-
-                <div className="relative z-10 flex flex-col items-center text-center h-full">
-                  <div className="w-24 h-24 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 relative group-hover:scale-110 transition-transform duration-500">
-                    <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                    <benefit.icon className={`w-12 h-12 ${benefit.accentColor} relative z-10 stroke-[1.5] group-hover:rotate-12 transition-transform duration-500`} />
-                  </div>
-
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4 group-hover:scale-105 transition-transform duration-300">
-                    {benefit.title}
-                  </h3>
-
-                  <p className="text-base text-foreground/80 leading-relaxed flex-grow">
-                    {benefit.description}
-                  </p>
-
-                  <div className="mt-6 w-16 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent group-hover:via-primary transition-all duration-500"></div>
-                </div>
-
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="relative bg-background/40 backdrop-blur-sm border border-primary/20 rounded-3xl p-8 md:p-12 transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 group overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            
+            <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0 glow-ice group-hover:scale-110 transition-transform duration-500">
+                <Clock className="w-10 h-10 text-primary" />
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                  If your business doesn't have a professional website — or has one that hasn't been updated since 2019 — those customers go somewhere else.
+                </p>
+                <p className="text-xl md:text-2xl font-semibold text-primary">
+                  It's not that your service is worse. It's that you're invisible.
+                </p>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

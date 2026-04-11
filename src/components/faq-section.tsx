@@ -8,24 +8,24 @@ import { Button } from "./ui/button";
 
 const faqs = [
   {
-    question: "How quickly can AI be implemented in our business?",
-    answer: "Most of our AI solutions can be implemented within 3-4 weeks. The timeline depends on the complexity of your requirements and existing systems. We start with a discovery phase to understand your needs, then design, develop, and deploy your custom AI solution. Many clients see initial results within the first week of implementation."
+    question: "How long does it take until my new site is live?",
+    answer: "Most of our standard websites for Aruba businesses are live within 2-4 weeks. This includes the complete design, development, and search optimization phases. We'll work closely with you to gather your content and feedback to ensure a smooth, fast launch."
   },
   {
-    question: "Do you provide ongoing support and maintenance?",
-    answer: "Yes! We provide comprehensive ongoing support and maintenance for all our AI solutions. This includes 24/7 monitoring, regular updates, performance optimization, and dedicated support channels. We also offer training sessions to ensure your team can make the most of your AI systems. Our goal is to be your long-term AI partner, not just a one-time vendor."
+    question: "Do I need to be a tech expert to manage the site?",
+    answer: "Not at all. We handle everything from hosting and security to technical updates and SEO. If you need to change a price, add a photo, or update your hours, just send us a message — your monthly plan covers updates so you never have to touch a line of code."
   },
   {
-    question: "How does AI integration work with existing systems?",
-    answer: "Our AI solutions are designed to integrate seamlessly with your existing tools and workflows. We support integration with popular CRMs, communication platforms, scheduling systems, and custom applications. During the discovery phase, we'll map out all your systems and create a integration plan that ensures smooth data flow and minimal disruption to your operations."
+    question: "Is hosting and security included in the monthly price?",
+    answer: "Yes, every site we build includes high-speed hosting and SSL security. We ensure your site stays fast and safe for your customers, so you don't have to worry about server maintenance or security patches."
   },
   {
-    question: "Can I start with a small project before committing fully?",
-    answer: "Yes! We recommend starting with a pilot project to prove the value of AI for your business. Many clients begin with one specific use case (like customer inquiry automation or appointment scheduling) and expand from there. This approach allows you to see tangible results quickly while minimizing risk and investment."
+    question: "Can I cancel at any time?",
+    answer: "Yes. We believe in providing value month after month. There are no long-term contracts; if you're not happy with our service, you can cancel whenever you want. We're here to be your long-term partner, not lock you into a contract."
   },
   {
-    question: "What ongoing costs should I expect?",
-    answer: "Our pricing structure is straightforward and predictable. We have a one-time fee for creating your custom AI Agent, which covers the complete design, development, and deployment of your solution. After that, you'll need to pay for ongoing maintenance, which covers hosting, dedicated support, and continuous improvements to keep your AI solution running optimally. During your free consultation, we'll provide a detailed breakdown based on your specific needs and usage requirements."
+    question: "Will my website show up on Google Aruba search?",
+    answer: "Yes. Every site we build is optimized for SEO from day one. We focus on getting you found by local customers in Aruba by optimizing for the search terms they're actually using every day."
   }
 ];
 
@@ -48,7 +48,7 @@ export const FAQSection = () => {
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-muted-foreground">
-            Everything you need to know about our AI solutions
+            Everything you need to know about our Website as a Service
           </p>
         </div>
 

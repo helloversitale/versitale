@@ -90,7 +90,7 @@ export const Header = () => {
               onClick={() => scrollToSection('contact')}
               className="glow-ice-strong"
             >
-              Book your free consultation
+              Let's Talk
             </Button>
           </div>
 
@@ -135,7 +135,7 @@ export const Header = () => {
                 onClick={() => scrollToSection('contact')}
                 className="w-full mt-2"
               >
-                Book your free consultation
+                Let's Talk
               </Button>
             </nav>
           </div>

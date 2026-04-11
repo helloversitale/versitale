@@ -40,22 +40,23 @@ export const HeroSection = () => {
         <div className="max-w-5xl mx-auto">
           <h1 className="mb-6 leading-tight">
             <span className="block text-4xl md:text-6xl lg:text-7xl font-bold mb-4 gradient-text animate-fade-in opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
-              AI-Powered Solutions For Your Business
+              Your Business Deserves a Website That Brings In Customers
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in opacity-0 [animation-delay:0.9s] [animation-fill-mode:forwards]">
-            We help businesses automate customer service, generate qualified leads, and scale operations with intelligent AI workflows.
+            We build, host, and optimize websites for businesses in Aruba — so you show up when people search, 
+            look professional when they land, and get the call when they're ready to buy.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
             <Button
               variant="hero"
               size="lg"
               className="text-lg px-8 py-6 h-auto glow-ice-strong"
               onClick={scrollToContact}
             >
-              Book Your Free Consultation
+              Let's Talk →
             </Button>
             <Button
               variant="hero-outline"
@@ -63,9 +64,13 @@ export const HeroSection = () => {
               className="text-lg px-8 py-6 h-auto"
               onClick={scrollToServices}
             >
-              Explore Our Solutions
+              Our Services
             </Button>
           </div>
+
+          <p className="text-sm text-muted-foreground animate-fade-in opacity-0 [animation-delay:1.2s] [animation-fill-mode:forwards]">
+            No tech skills needed. No long contracts. Just results.
+          </p>
 
         </div>
       </div>

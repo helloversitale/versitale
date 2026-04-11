@@ -45,10 +45,10 @@ export const Footer = () => {
               </button>
             </div>
             <p className="text-muted-foreground mb-4">
-              AI Solutions That Drive Results
+              More Customers. Less Hassle.
             </p>
             <p className="text-sm text-muted-foreground">
-              From conversational AI to full workflow automation. We build solutions that transform how your business operates and serves customers.
+              Versitale builds, hosts, and optimizes websites for businesses in Aruba. We get you found month after month so you can focus on running your business.
             </p>
           </div>
 
@@ -102,6 +102,9 @@ export const Footer = () => {
                   hello@versitale.com
                 </a>
               </li>
+              <li className="text-sm text-muted-foreground">
+                Oranjestad, Aruba
+              </li>
             </ul>
           </div>
 
@@ -110,7 +113,7 @@ export const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © 2025 Versitale - AI Solutions That Drive Results. All rights reserved.
+              © 2025 Versitale — Built in Aruba. For Aruba.
             </p>
             <div className="flex gap-6">
               <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">

@@ -1,4 +1,4 @@
-import { Calendar, Cog, MessageSquare, Phone, ArrowRight, CircleCheck as CheckCircle2 } from "lucide-react";
+import { Layout, Server, Search, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 
 export const ServicesSection = () => {
@@ -9,85 +9,63 @@ export const ServicesSection = () => {
     }
   };
 
-
   const services = [
     {
-      icon: MessageSquare,
-      title: "Customer Support Agent",
-      description: "Reduce response times and resolve inquiries 24/7 without hiring extra staff.",
+      icon: Layout,
+      title: "Get Found",
+      description: "Show up on Google when people search for your type of business in Aruba. We handle the SEO so you don't have to learn it.",
       includes: [
-        "AI Agent (Website + WhatsApp)",
-        "Links directly to Facebook and Instagram",
-        "Multilingual",
-        "Live agent handoff when needed",
-        "Quality monitoring & analytics"
+        "Local SEO optimization",
+        "Google Business Profile management",
+        "Keyword-rich content",
+        "Monthly performance tracking"
       ],
-      perfectFor: "Service-based businesses, dental clinics, healthcare, education",
-      timeline: "Ready in 3-4 weeks"
+      perfectFor: "Restaurants, retail shops, local service providers",
     },
     {
-      icon: Phone,
-      title: "AI Sales Agent",
-      description: "Engage, qualify, and follow up with leads automatically.",
+      icon: Server,
+      title: "Look Professional",
+      description: "First impressions happen online now. Your website will look modern, load fast, and work perfectly on every phone and laptop.",
       includes: [
-        "AI Voice Agent for Handling Calls",
-        "Email Follow-Up Automation",
-        "Lead Qualification Scripts",
-        "CRM Integration & Data Sync",
-        "Automated Appointment Scheduling"
+        "Custom, mobile-first design",
+        "High-speed performance tuning",
+        "Premium animations & UX",
+        "Modern typography & branding"
       ],
-      perfectFor: "Real estate, financial services, recruitment, agency work",
-      timeline: "Ready in 3-4 weeks"
+      perfectFor: "Hotels, real estate agencies, professional firms",
     },
     {
-      icon: Calendar,
-      title: "Appointment & Booking Automation",
-      description: "Let clients book appointments without back-and-forth messages or phone calls.",
+      icon: Search,
+      title: "Win More Customers",
+      description: "Clear calls to action, WhatsApp integration, and booking options that make it easy for visitors to become paying customers.",
       includes: [
-        "Appointment Setup Agent (Website/WhatsApp)",
-        "Google Calendar/CRM Sync",
-        "Confirmation & Reminder Automations",
-        "Voice + Chat Integration",
-        "No-show Reduction System"
+        "WhatsApp click-to-chat integration",
+        "Strategic call-to-action placement",
+        "Booking & appointment scheduling",
+        "Conversion-optimized layouts"
       ],
-      perfectFor: "Clinics, salons, consultants, trainers",
-      timeline: "Ready in 2 weeks"
-    },
-    {
-      icon: Cog,
-      title: "Custom AI Workflows",
-      description: "Need something specific? We'll tailor a system just for your business.",
-      includes: [
-        "API-first architecture for seamless data flow across your tech stack",
-        "Hybrid Voice + Chat Flows",
-        "Advanced Logic & Routing",
-        "Human-in-the-Loop Escalations",
-        "Custom Analytics Dashboard"
-      ],
-      perfectFor: "Enterprises, fast-scaling startups, and niche use cases",
-      timeline: "Ready in 3-4 weeks"
+      perfectFor: "Clinics, salons, tour operators, car rentals",
     }
   ];
-
 
   return (
     <section id="services" className="pt-0 pb-0 px-4 relative overflow-hidden">
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16 animate-slide-up py-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            AI Solutions That Drive <span className="gradient-text">Real Results</span>
+            A Website That <span className="gradient-text">Works as Hard as You Do</span>
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose from our specialized AI solutions designed to transform different aspects of your business
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Versitale gives you a complete website — designed, built, hosted, and optimized every month — so you can focus on running your business while your website runs your marketing.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="service-card p-8 rounded-2xl group hover:scale-[1.02] transition-all duration-300 work-step-card"
+              className="service-card p-8 rounded-2xl group hover:scale-[1.02] transition-all duration-300 work-step-card flex flex-col h-full"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center glow-ice group-hover:glow-ice-strong transition-all duration-300">
@@ -96,7 +74,7 @@ export const ServicesSection = () => {
                 <h3 className="text-2xl font-bold">{service.title}</h3>
               </div>
 
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
                 {service.description}
               </p>
 
@@ -115,15 +93,26 @@ export const ServicesSection = () => {
                 </ul>
               </div>
 
-              <div className="mb-6 pt-4 border-t border-border">
-                <span className="text-sm font-medium text-primary">Perfect for: </span>
-                <span className="text-sm text-muted-foreground">{service.perfectFor}</span>
+              <div className="mt-auto pt-6 border-t border-border">
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-primary">Perfect for: </span>
+                  {service.perfectFor}
+                </p>
               </div>
-
             </div>
           ))}
         </div>
 
+        <div className="text-center pb-20">
+          <Button 
+            variant="hero" 
+            size="lg" 
+            onClick={scrollToContact}
+            className="glow-ice"
+          >
+            Get Started with Your New Website
+          </Button>
+        </div>
       </div>
     </section>
   );
