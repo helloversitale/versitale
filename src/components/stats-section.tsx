@@ -39,34 +39,14 @@ export const StatsSection = () => {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '3s' }}></div>
       </div>
 
-      <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-16 space-y-4 px-4">
+      <div className="container mx-auto max-w-4xl relative z-10">
+        <div className="text-center space-y-6 px-4">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-100 animate-slide-up">
-            Right Now, Customers Are Searching for What You Sell and <span className="gradient-text">Finding Your Competitor Instead</span>
+            Your Customers Search Google. <span className="gradient-text">Can They Find You?</span>
           </h2>
-          <p className="text-lg md:text-xl text-foreground/80 max-w-4xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
-            Every day, people in Aruba search Google for restaurants, plumbers, car rentals, salons, lawyers, and every other local service you can think of.
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
+            Most Aruba businesses lose customers every day to competitors with better websites. If you're not showing up, you're missing out.
           </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="relative bg-background/40 backdrop-blur-sm border border-primary/20 rounded-3xl p-8 md:p-12 transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 group overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            
-            <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
-              <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0 glow-ice group-hover:scale-110 transition-transform duration-500">
-                <Clock className="w-10 h-10 text-primary" />
-              </div>
-              <div className="space-y-4">
-                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                  If your business doesn't have a professional website, or has one that hasn't been updated since 2019, those customers go somewhere else.
-                </p>
-                <p className="text-xl md:text-2xl font-semibold text-primary">
-                  It's not that your service is worse. It's that you're invisible.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
