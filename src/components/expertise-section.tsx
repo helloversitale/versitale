@@ -1,4 +1,5 @@
 import { Award, Users, Target, Shield, Zap, Globe } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const expertise = [
   {
@@ -59,11 +60,6 @@ export const ExpertiseSection = () => {
       icon: Target,
       title: "Mobile-First Design",
       description: "Most people in Aruba browse on their phones. Your site will look and work perfectly on every mobile device."
-    },
-    {
-      icon: Globe,
-      title: "Monthly Updates",
-      description: "Found a typo? Want to add a new service? Your monthly plan covers updates so your site stays current."
     }
   ];
 
@@ -77,7 +73,8 @@ export const ExpertiseSection = () => {
           <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Desktop Grid View */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
             <div
               key={index}
@@ -92,6 +89,35 @@ export const ExpertiseSection = () => {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Mobile Accordion View */}
+        <div className="md:hidden space-y-4">
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {reasons.map((reason, index) => (
+              <AccordionItem 
+                key={index} 
+                value={index.toString()}
+                className="service-card rounded-2xl border border-primary/20 overflow-hidden"
+              >
+                <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-primary/5 transition-colors">
+                  <div className="flex items-center gap-4 text-left">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center glow-ice">
+                      <reason.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <span className="text-lg font-bold">{reason.title}</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 animate-fade-in">
+                  <div className="pt-2 border-t border-primary/10">
+                    <p className="text-muted-foreground leading-relaxed text-base">
+                      {reason.description}
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>

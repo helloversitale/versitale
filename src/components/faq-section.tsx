@@ -66,16 +66,6 @@ export const FAQSection = () => {
             ))}
           </Accordion>
         </div>
-
-        <div className="text-center">
-          <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
-          <p className="text-muted-foreground mb-6">
-            Schedule a free consultation and we'll answer all your questions
-          </p>
-          <Button variant="hero" size="lg" onClick={scrollToContact} className="glow-ice-strong">
-            Let's Talk About Your Business
-          </Button>
-        </div>
       </div>
       </section>
     </section>
