@@ -20,14 +20,14 @@ All colors MUST be HSL.
     --popover-foreground: 0 0% 100%;
     
     /* Brand Colors */
-    --primary: 207 100% 73%; /* Ice Blue */
+    --primary: 199 100% 65%; /* Vibrant Cyan-Blue */
     --primary-foreground: 0 0% 0%;
     
     --secondary: 0 0% 18%; /* Charcoal */
     --secondary-foreground: 0 0% 100%;
     
     /* Accent Colors */
-    --accent: 207 91% 60%; /* Darker Ice Blue */
+    --accent: 199 100% 50%; /* Deep Cyan */
     --accent-foreground: 0 0% 100%;
     
     --muted: 0 0% 15%;
@@ -40,16 +40,16 @@ All colors MUST be HSL.
     /* UI Elements */
     --border: 0 0% 20%;
     --input: 0 0% 18%;
-    --ring: 207 100% 73%;
+    --ring: 199 100% 65%;
     
     /* Design System Extensions */
     --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 8%) 50%, hsl(0 0% 15%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 5%) 0%, hsl(0 0% 12%) 100%);
-    --gradient-ice: linear-gradient(90deg, hsl(207 100% 73%) 0%, hsl(207 91% 60%) 100%);
+    --gradient-ice: linear-gradient(90deg, hsl(199 100% 65%) 0%, hsl(199 100% 50%) 100%);
     
     /* Glow Effects */
-    --glow-ice: 0 0 20px hsl(207 100% 73% / 0.3);
-    --glow-ice-strong: 0 0 40px hsl(207 100% 73% / 0.5);
+    --glow-ice: 0 0 20px hsl(199 100% 65% / 0.3);
+    --glow-ice-strong: 0 0 40px hsl(199 100% 65% / 0.5);
     
     /* Shadows */
     --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.3);
@@ -86,11 +86,11 @@ All colors MUST be HSL.
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 100%;
-    --primary: 207 100% 73%;
+    --primary: 199 100% 65%;
     --primary-foreground: 0 0% 0%;
     --secondary: 0 0% 18%;
     --secondary-foreground: 0 0% 100%;
-    --accent: 207 91% 60%;
+    --accent: 199 100% 50%;
     --accent-foreground: 0 0% 100%;
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 80%;

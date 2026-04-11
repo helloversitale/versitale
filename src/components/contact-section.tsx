@@ -70,8 +70,8 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="pt-0 pb-20 px-4 relative overflow-hidden">
-      <div className="container mx-auto max-w-6xl relative z-10 py-20">
+    <section id="contact" className="py-12 md:py-24 px-4 relative overflow-hidden">
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Get Your Business the <span className="gradient-text">Website It Deserves?</span>

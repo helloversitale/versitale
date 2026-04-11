@@ -38,21 +38,24 @@ export const HeroSection = () => {
 
       <div className="relative z-10 container px-4 text-center">
         <div className="max-w-5xl mx-auto">
-          <h1 className="mb-6 leading-tight">
-            <span className="block text-4xl md:text-6xl lg:text-7xl font-bold mb-4 gradient-text animate-fade-in opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
-              Get Found. Get Chosen. Get Paid.
+          <h1 className="mb-10 leading-[1.05] tracking-tight">
+            <span className="block text-[clamp(2.6rem,8vw,6rem)] font-[900] tracking-[-0.04em] gradient-text animate-fade-in opacity-0 [animation-delay:0.3s] [animation-fill-mode:forwards]">
+              Your Customers Are Searching.
+            </span>
+            <span className="block text-[clamp(2.6rem,8vw,6rem)] font-[900] tracking-[-0.04em] gradient-text animate-fade-in opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards]">
+              Can They Find You?
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed animate-fade-in opacity-0 [animation-delay:0.9s] [animation-fill-mode:forwards]">
-            We build websites that bring Aruba businesses more customers.
+          <p className="text-[1.35rem] md:text-[1.75rem] text-neutral-200 mb-12 max-w-4xl mx-auto leading-[1.5] animate-fade-in opacity-0 [animation-delay:0.9s] [animation-fill-mode:forwards]">
+            Websites that get <span className="font-semibold text-white">Aruba businesses</span> found on <span className="font-semibold text-white">Google</span>.
           </p>
 
-          <div className="flex flex-row gap-3 justify-center items-center mb-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
             <Button
               variant="hero"
               size="lg"
-              className="text-base sm:text-lg px-4 sm:px-8 py-5 sm:py-6 h-auto glow-ice-strong"
+              className="w-full sm:w-auto text-lg sm:text-xl px-10 py-6 h-auto glow-ice-strong font-bold"
               onClick={scrollToContact}
             >
               Let's Talk →
@@ -60,7 +63,7 @@ export const HeroSection = () => {
             <Button
               variant="hero-outline"
               size="lg"
-              className="text-base sm:text-lg px-4 sm:px-8 py-5 sm:py-6 h-auto"
+              className="w-full sm:w-auto text-lg sm:text-xl px-10 py-6 h-auto font-semibold"
               onClick={scrollToServices}
             >
               Our Services

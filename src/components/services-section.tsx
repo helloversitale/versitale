@@ -93,16 +93,7 @@ export const ServicesSection = () => {
           ))}
         </div>
 
-        <div className="text-center pb-20">
-          <Button 
-            variant="hero" 
-            size="lg" 
-            onClick={scrollToContact}
-            className="glow-ice"
-          >
-            Get Started with Your New Website
-          </Button>
-        </div>
+
       </div>
     </section>
   );
