@@ -46,9 +46,29 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="pt-0 pb-0 px-4 relative overflow-hidden">
+    <section id="services" className="pt-24 pb-24 px-4 relative overflow-hidden">
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-16 animate-slide-up py-20">
+        
+        {/* Problem Statement Callout - Visually distinct from main heading */}
+        <div className="max-w-5xl mx-auto mb-32 px-6 py-16 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-sm relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          
+          <div className="relative z-10 text-center">
+            <div className="inline-block px-4 py-1.5 mb-8 text-xs font-semibold tracking-[0.2em] text-primary uppercase bg-primary/10 rounded-full">
+              The Reality of Aruba Business Today
+            </div>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-8 leading-[1.1]">
+              Your Customers Search Google. <br className="hidden md:block" />
+              <span className="gradient-text">Can They Find You?</span>
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed">
+              Most Aruba businesses lose customers every day to competitors with better websites. If you're not showing up on page one, <span className="text-foreground font-medium">you're practically invisible.</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Main Services Flow */}
+        <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             A Website That <span className="gradient-text">Works as Hard as You Do</span>
           </h2>
