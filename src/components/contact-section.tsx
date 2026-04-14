@@ -208,7 +208,7 @@ export const ContactSection = () => {
                     <Button 
                       type="submit" 
                       disabled={isSubmitting}
-                      className="w-full h-14 bg-gradient-to-r from-[#60CDFF] to-[#00A3FF] hover:from-[#70D5FF] hover:to-[#00B2FF] text-black font-extrabold text-lg rounded-full transition-all duration-500 shadow-lg shadow-[#60CDFF]/20 hover:shadow-[#60CDFF]/40 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 relative overflow-hidden group"
+                      className="w-full h-14 bg-gradient-to-r from-[#00E5FF] to-[#00A3FF] hover:from-[#33EAFF] hover:to-[#22B2FF] text-black font-extrabold text-lg rounded-full transition-all duration-500 shadow-lg shadow-[#00E5FF]/20 hover:shadow-[#00E5FF]/40 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 relative overflow-hidden group"
                     >
                       <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500"></div>
                       {isSubmitting ? (
