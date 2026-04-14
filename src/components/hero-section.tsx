@@ -63,7 +63,7 @@ export const HeroSection = () => {
             <Button
               variant="default"
               size="lg"
-              className="flex-1 sm:flex-none w-full sm:w-auto text-sm sm:text-xl px-4 sm:px-10 py-6 h-auto font-bold rounded-full bg-gradient-to-r from-[#00E5FF] to-[#00A3FF] border-0 text-black shadow-lg shadow-[#00E5FF]/40 transition-all hover:scale-105 glow-ice-strong whitespace-nowrap"
+              className="flex-1 sm:flex-none w-full sm:w-auto text-sm sm:text-xl px-4 sm:px-10 py-6 h-auto font-bold rounded-full bg-gradient-to-r from-primary to-accent border-0 text-black shadow-lg shadow-primary/40 transition-all hover:scale-105 glow-ice-strong whitespace-nowrap"
               onClick={scrollToContact}
             >
               Let's Talk →
