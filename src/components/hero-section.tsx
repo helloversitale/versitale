@@ -39,10 +39,10 @@ export const HeroSection = () => {
       <div className="relative z-10 container px-8 md:px-12 text-left">
         <div className="max-w-5xl">
           <h1 className="mb-10 leading-[1.2] tracking-tight">
-            <span className="block text-[clamp(2.6rem,8vw,6rem)] font-[900] tracking-[-0.04em] gradient-text animate-fade-in opacity-0 pb-1 [animation-delay:0.3s] [animation-fill-mode:forwards]">
+            <span className="block text-[clamp(2.2rem,6vw,4.5rem)] lg:whitespace-nowrap font-[900] tracking-[-0.04em] gradient-text animate-fade-in opacity-0 pb-1 [animation-delay:0.3s] [animation-fill-mode:forwards]">
               Your Customers Are Searching.
             </span>
-            <span className="block text-[clamp(2.6rem,8vw,6rem)] font-[900] tracking-[-0.04em] gradient-text animate-fade-in opacity-0 pb-1 [animation-delay:0.6s] [animation-fill-mode:forwards]">
+            <span className="block text-[clamp(2.2rem,6vw,4.5rem)] lg:whitespace-nowrap font-[900] tracking-[-0.04em] gradient-text animate-fade-in opacity-0 pb-1 [animation-delay:0.6s] [animation-fill-mode:forwards]">
               Can They Find You?
             </span>
           </h1>
@@ -51,11 +51,11 @@ export const HeroSection = () => {
             Websites that get <span className="font-semibold text-white">Aruba businesses</span> found on <span className="font-semibold text-white">Google</span>.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-start items-center sm:items-start mb-6 animate-fade-in opacity-0 [animation-delay:1.2s] [animation-fill-mode:forwards]">
+          <div className="flex flex-row gap-4 sm:gap-6 justify-start items-center sm:items-start mb-6 animate-fade-in opacity-0 [animation-delay:1.2s] [animation-fill-mode:forwards]">
             <Button
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto text-lg sm:text-xl px-10 py-6 h-auto font-semibold rounded-full border-2 border-primary/50 text-white bg-transparent hover:bg-primary/10 hover:border-primary transition-all glow-ice"
+              className="flex-1 sm:flex-none w-full sm:w-auto text-sm sm:text-xl px-4 sm:px-10 py-6 h-auto font-semibold rounded-full border-2 border-primary/50 text-white bg-transparent hover:bg-primary/10 hover:border-primary transition-all glow-ice whitespace-nowrap"
               onClick={scrollToServices}
             >
               Our Services
@@ -63,7 +63,7 @@ export const HeroSection = () => {
             <Button
               variant="default"
               size="lg"
-              className="w-full sm:w-auto text-lg sm:text-xl px-10 py-6 h-auto font-bold rounded-full bg-gradient-to-r from-[#60CDFF] to-[#00A3FF] border-0 text-black shadow-lg shadow-[#60CDFF]/40 transition-all hover:scale-105 glow-ice-strong"
+              className="flex-1 sm:flex-none w-full sm:w-auto text-sm sm:text-xl px-4 sm:px-10 py-6 h-auto font-bold rounded-full bg-gradient-to-r from-[#60CDFF] to-[#00A3FF] border-0 text-black shadow-lg shadow-[#60CDFF]/40 transition-all hover:scale-105 glow-ice-strong whitespace-nowrap"
               onClick={scrollToContact}
             >
               Let's Talk →

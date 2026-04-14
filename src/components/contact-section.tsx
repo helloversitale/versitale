@@ -208,17 +208,18 @@ export const ContactSection = () => {
                     <Button 
                       type="submit" 
                       disabled={isSubmitting}
-                      className="w-full h-12 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-primary-foreground font-bold text-lg rounded-xl transition-all glow-ice active:scale-[0.98] disabled:opacity-50"
+                      className="w-full h-14 bg-gradient-to-r from-[#60CDFF] to-[#00A3FF] hover:from-[#70D5FF] hover:to-[#00B2FF] text-black font-extrabold text-lg rounded-full transition-all duration-500 shadow-lg shadow-[#60CDFF]/20 hover:shadow-[#60CDFF]/40 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 relative overflow-hidden group"
                     >
+                      <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500"></div>
                       {isSubmitting ? (
-                        <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin"></div>
-                          <span>Sending...</span>
+                        <div className="flex items-center gap-3 relative z-10">
+                          <div className="w-6 h-6 border-3 border-black/30 border-t-black rounded-full animate-spin"></div>
+                          <span>Processing Request...</span>
                         </div>
                       ) : (
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-3 relative z-10">
                           <Send className="w-5 h-5" />
-                          <span>Request Consultation</span>
+                          <span>Check Availability</span>
                         </div>
                       )}
                     </Button>
