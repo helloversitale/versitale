@@ -32,8 +32,8 @@ This plan outlines the strategic steps to modernize the Versitale website, pivot
    - Ensure the styling matches the premium "Versitale" brand aesthetic (glassmorphism, clean typography).
 2. **Logic & Integration:**
    - Implement client-side validation.
-   - Connect the form to the backend (Supabase/Edge Functions) for lead capture.
    - Add "Success" and "Error" states with smooth micro-animations.
+   - Connect the form to a notification service or email API for lead capture.
 
 ## Phase 4: Service Pivot — Website as a Service (WaaS)
 **Goal:** Rebrand the core value proposition to sell subscription-based web services.
