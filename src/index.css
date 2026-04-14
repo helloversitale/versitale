@@ -199,12 +199,9 @@ All colors MUST be HSL.
     display: none;
   }
   
-  /* Gradient Text */
+  /* Bright Solid Text */
   .gradient-text {
-    background: var(--gradient-ice);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #00E5FF;
     letter-spacing: -0.02em;
   }
 
