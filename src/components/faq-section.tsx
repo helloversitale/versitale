@@ -33,6 +33,8 @@ const faqs = [
   }
 ];
 
+import { StructuredData } from "./structured-data";
+
 export const FAQSection = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -41,8 +43,22 @@ export const FAQSection = () => {
     }
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <section id="faq" className="py-12 md:py-20 px-4 relative overflow-hidden">
+      <StructuredData data={faqSchema} />
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">

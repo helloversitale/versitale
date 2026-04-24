@@ -3,6 +3,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { articles } from "@/data/articles";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { StructuredData } from "@/components/structured-data";
 
 const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -12,8 +13,29 @@ const ArticleDetail = () => {
     return <Navigate to="/articles" replace />;
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.excerpt,
+    "author": {
+      "@type": "Organization",
+      "name": article.author
+    },
+    "datePublished": new Date(article.date).toISOString(),
+    "publisher": {
+      "@type": "Organization",
+      "name": "Versitale",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://versitale.com/versitale-logo.png"
+      }
+    }
+  };
+
   return (
     <>
+      <StructuredData data={articleSchema} />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
       </div>

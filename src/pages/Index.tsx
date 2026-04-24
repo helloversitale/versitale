@@ -6,10 +6,34 @@ import { ExpertiseSection } from "@/components/expertise-section";
 import { FAQSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { StructuredData } from "@/components/structured-data";
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Versitale",
+  "image": "https://versitale.com/versitale-logo.png",
+  "description": "Versitale builds, hosts, and optimizes websites for businesses in Aruba. Get a website that brings you customers — not headaches.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Oranjestad",
+    "addressRegion": "Aruba",
+    "addressCountry": "AW"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 12.5211,
+    "longitude": -70.0367
+  },
+  "url": "https://versitale.com",
+  "email": "hello@versitale.com",
+  "priceRange": "$$"
+};
 
 const Index = () => {
   return (
     <>
+      <StructuredData data={localBusinessSchema} />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>
