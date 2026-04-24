@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -75,6 +75,12 @@ export const Header = () => {
             >
               FAQ
             </button>
+            <Link
+              to="/articles"
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Articles
+            </Link>
             <button
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary transition-colors font-medium"
@@ -123,6 +129,13 @@ export const Header = () => {
               >
                 FAQ
               </button>
+              <Link
+                to="/articles"
+                className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Articles
+              </Link>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"

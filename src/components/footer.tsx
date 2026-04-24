@@ -80,6 +80,14 @@ export const Footer = () => {
                 </button>
               </li>
               <li>
+                <Link
+                  to="/articles"
+                  className="text-muted-foreground hover:text-primary transition-colors block"
+                >
+                  Articles
+                </Link>
+              </li>
+              <li>
                 <button
                   onClick={() => scrollToSection('contact')}
                   className="text-muted-foreground hover:text-primary transition-colors"

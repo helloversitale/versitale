@@ -8,24 +8,28 @@ import { Button } from "./ui/button";
 
 const faqs = [
   {
-    question: "How long does it take until my new site is live?",
-    answer: "Most of our standard websites for Aruba businesses are live within 2-4 weeks. This includes the complete design, development, and search optimization phases. We'll work closely with you to gather your content and feedback to ensure a smooth, fast launch."
+    question: "How long does it take to build a website for a business in Aruba?",
+    answer: "Most of our standard websites for Aruba businesses are live within 2-4 weeks. This timeframe includes the complete design, development, and initial search engine optimization (SEO) phases. We work closely with you to gather your content and feedback to ensure a smooth, extremely fast launch."
   },
   {
-    question: "Do I need to be a tech expert to manage the site?",
-    answer: "Not at all. We handle everything from hosting and security to technical updates and SEO. If you need to change a price, add a photo, or update your hours, just send us a message; your monthly plan covers updates so you never have to touch a line of code."
+    question: "Do I need technical skills to manage my new website?",
+    answer: "Not at all. We handle exactly everything from high-speed hosting and security to technical updates and SEO. If you need to change a price, add a new photo, or update your business hours, simply send us a message. Your monthly plan covers continuous updates so you never have to touch a single line of code."
   },
   {
-    question: "Is hosting and security included in the monthly price?",
-    answer: "Yes, every site we build includes high-speed hosting and SSL security. We ensure your site stays fast and safe for your customers, so you don't have to worry about server maintenance or security patches."
+    question: "Are website hosting, security, and maintenance included?",
+    answer: "Yes, absolutely. Every professional site we build includes premium, high-speed hosting and SSL security. We ensure your website stays fast, reliable, and perfectly safe for your customers. We actively take care of server maintenance and security patches behind the scenes."
   },
   {
-    question: "Can I cancel at any time?",
-    answer: "Yes. We believe in providing value month after month. There are no long-term contracts; if you're not happy with our service, you can cancel whenever you want. We're here to be your long-term partner, not lock you into a contract."
+    question: "Why do you use a monthly subscription model (Website as a Service)?",
+    answer: "Unlike traditional agencies that charge thousands upfront and leave you with an outdated site a year later, our subscription model aligns our success with yours. The flat monthly fee covers creation, unlimited updates, premium hosting, and ongoing local SEO, allowing you to focus purely on your business without unexpected costs."
   },
   {
-    question: "Will my website show up on Google Aruba search?",
-    answer: "Yes. Every site we build is optimized for SEO from day one. We focus on getting you found by local customers in Aruba by optimizing for the search terms they're actually using every day."
+    question: "How do you optimize my website for Google searches in Aruba (SEO)?",
+    answer: "Every site we build is intricately optimized for SEO from day one. We identify and target the specific search terms local and tourist customers in Aruba are actively using. This includes optimizing on-page content, meta descriptions, image alt tags, and implementing proper JSON-LD structured data."
+  },
+  {
+    question: "Am I locked into a long-term contract?",
+    answer: "No. We believe in providing immense value month after month to earn your business. There are zero long-term contracts; if you're not entirely satisfied with our service, you can cancel at any time. We strive to be your long-term digital growth partner, not just a service provider."
   }
 ];
 
