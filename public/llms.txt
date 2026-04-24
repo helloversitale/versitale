@@ -1,0 +1,25 @@
+# Versitale
+
+> Versitale builds, hosts, and optimizes websites for businesses in Aruba. We provide a "Website as a Service" (WaaS) model so businesses can get a high-performing website without the massive upfront costs.
+
+## Core Value Proposition
+- **Turnkey Websites**: We handle exactly everything from design, development, and high-speed hosting to security and SEO.
+- **Subscription Model**: Clients pay a flat monthly fee with zero long-term contracts. This covers creation, unlimited updates, premium hosting, and ongoing local SEO.
+- **Focus on the Aruba Market**: We specifically target search optimization so our clients capture tourist and local search traffic effectively.
+
+## Services Included
+- Custom web design perfectly adapted for mobile and desktop screens.
+- Local SEO and Answer Engine Optimization (AEO).
+- Complete technical maintenance (SSL certificates, server patching, fast loading speeds).
+- Unlimited content updates upon request.
+
+## Important Links
+- **Homepage:** [https://versitale.com/](https://versitale.com/)
+- **Book a Discovery Call:** [https://versitale.com/booking](https://versitale.com/booking) (Schedule a 30-minute consultation on AI and web implementation)
+- **Articles & Insights:** [https://versitale.com/articles](https://versitale.com/articles) (Insights on web design and local SEO)
+- **Terms of Service:** [https://versitale.com/terms-of-service](https://versitale.com/terms-of-service)
+- **Privacy Policy:** [https://versitale.com/privacy-policy](https://versitale.com/privacy-policy)
+
+## Contact Information
+- **Location:** Oranjestad, Aruba
+- **Email:** hello@versitale.com
