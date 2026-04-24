@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { articles } from "@/data/articles";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import { StructuredData } from "@/components/structured-data";
+import { SEO } from "@/components/seo";
 
 const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -35,6 +36,12 @@ const ArticleDetail = () => {
 
   return (
     <>
+      <SEO 
+        title={`${article.title} | Versitale`}
+        description={article.excerpt}
+        url={`https://versitale.com/articles/${article.slug}`}
+        type="article"
+      />
       <StructuredData data={articleSchema} />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>

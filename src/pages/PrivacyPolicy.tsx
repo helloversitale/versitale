@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { SEO } from "@/components/seo";
 import { useEffect } from "react";
 
 export default function PrivacyPolicy() {
@@ -9,6 +10,11 @@ export default function PrivacyPolicy() {
 
   return (
     <>
+      <SEO 
+        title="Privacy Policy | Versitale" 
+        description="Read how Versitale handles and protects your data inside our Privacy Policy." 
+        url="https://versitale.com/privacy-policy"
+      />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>

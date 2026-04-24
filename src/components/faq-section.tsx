@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "./ui/button";
+import { StructuredData } from "./structured-data";
 
 const faqs = [
   {
@@ -32,8 +33,6 @@ const faqs = [
     answer: "No. We believe in providing immense value month after month to earn your business. There are zero long-term contracts; if you're not entirely satisfied with our service, you can cancel at any time. We strive to be your long-term digital growth partner, not just a service provider."
   }
 ];
-
-import { StructuredData } from "./structured-data";
 
 export const FAQSection = () => {
   const scrollToContact = () => {

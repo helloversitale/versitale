@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { SEO } from "@/components/seo";
 import { Button } from "@/components/ui/button";
 import { Calendar, CheckCircle2, Loader2 } from "lucide-react";
 
@@ -48,6 +49,11 @@ const Booking = () => {
 
   return (
     <>
+      <SEO 
+        title="Book a Discovery Call | Versitale" 
+        description="Schedule a 30-minute discovery call with us to see how we can build a revenue-generating website for your Aruba business." 
+        url="https://versitale.com/booking"
+      />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>

@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { SEO } from "@/components/seo";
 import { useEffect } from "react";
 
 export default function TermsOfService() {
@@ -9,6 +10,11 @@ export default function TermsOfService() {
 
   return (
     <>
+      <SEO 
+        title="Terms of Service | Versitale" 
+        description="Our terms regarding website creation, maintenance subscriptions, and client responsibilities at Versitale." 
+        url="https://versitale.com/terms-of-service"
+      />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>

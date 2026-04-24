@@ -7,6 +7,7 @@ import { FAQSection } from "@/components/faq-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { StructuredData } from "@/components/structured-data";
+import { SEO } from "@/components/seo";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -33,6 +34,11 @@ const localBusinessSchema = {
 const Index = () => {
   return (
     <>
+      <SEO 
+        title="Websites for Businesses in Aruba | Versitale" 
+        description="Versitale builds, hosts, and optimizes websites for businesses in Aruba. Get a website that brings you customers — not headaches." 
+        url="https://versitale.com"
+      />
       <StructuredData data={localBusinessSchema} />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>

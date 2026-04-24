@@ -3,10 +3,16 @@ import { Footer } from "@/components/footer";
 import { articles } from "@/data/articles";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { SEO } from "@/components/seo";
 
 const Articles = () => {
   return (
     <>
+      <SEO 
+        title="Web Design & Local SEO Articles | Versitale" 
+        description="Insights on web design, local SEO, and growing your business in Aruba." 
+        url="https://versitale.com/articles"
+      />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>

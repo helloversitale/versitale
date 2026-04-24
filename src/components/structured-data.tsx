@@ -12,7 +12,9 @@ export const StructuredData = ({ data }: StructuredDataProps) => {
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
     };
   }, [data]);
 
