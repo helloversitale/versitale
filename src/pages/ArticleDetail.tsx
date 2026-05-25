@@ -114,8 +114,13 @@ const ArticleDetail = () => {
                 </div>
               </header>
 
-              <div 
-                className="prose prose-invert max-w-none prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-10 prose-h2:mb-4 prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6 prose-a:text-primary hover:prose-a:text-primary/80 prose-strong:text-foreground"
+              <div
+                className="
+                  [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-primary [&_h2]:mt-16 [&_h2]:mb-5 [&_h2]:leading-snug
+                  [&_p]:text-muted-foreground [&_p]:leading-loose [&_p]:text-base [&_p]:mb-10
+                  [&_a]:text-primary [&_a:hover]:opacity-80
+                  [&_strong]:text-foreground
+                "
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
             </article>
