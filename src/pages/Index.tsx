@@ -1,19 +1,5 @@
-import * as Sentry from '@sentry/react';
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
-
-function ErrorButton() {
-  return (
-    <button
-      onClick={() => {
-        throw new Error('This is your first error!');
-      }}
-      style={{ position: 'fixed', bottom: 16, right: 16, zIndex: 9999, background: 'red', color: 'white', padding: '8px 16px', borderRadius: 8, fontWeight: 'bold', cursor: 'pointer' }}
-    >
-      Break the world
-    </button>
-  );
-}
 import { ServicesSection } from "@/components/services-section";
 import { HowWeWorkSection } from "@/components/how-we-work-section";
 import { ExpertiseSection } from "@/components/expertise-section";
@@ -65,7 +51,6 @@ const Index = () => {
       <div className="relative z-10">
         <Header />
         <main className="min-h-screen">
-          <ErrorButton />
           <HeroSection />
           <ServicesSection />
           <HowWeWorkSection />
