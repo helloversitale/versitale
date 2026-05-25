@@ -8,18 +8,16 @@ interface SEOProps {
   type?: string;
 }
 
-export const SEO = ({ 
-  title, 
-  description, 
-  url = "https://versitale.com", 
-  image = "/versitale-logo.png",
+export const SEO = ({
+  title,
+  description,
+  url = "https://versitale.com",
+  image = "https://versitale.com/versitale-logo.png",
   type = "website"
 }: SEOProps) => {
   useEffect(() => {
-    // 1. Update Title
     document.title = title;
 
-    // 2. Helper to mutate or create meta tags
     const setMetaTag = (attrName: string, attrValue: string, content: string) => {
       let element = document.querySelector(`meta[${attrName}="${attrValue}"]`);
       if (!element) {
@@ -30,16 +28,30 @@ export const SEO = ({
       element.setAttribute('content', content);
     };
 
+    const setCanonical = (href: string) => {
+      let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+      if (!link) {
+        link = document.createElement('link');
+        link.setAttribute('rel', 'canonical');
+        document.head.appendChild(link);
+      }
+      link.setAttribute('href', href);
+    };
+
     // Standard meta
     setMetaTag('name', 'description', description);
 
+    // Canonical
+    setCanonical(url);
+
     // Open Graph
+    const absoluteImage = image.startsWith('http') ? image : `https://versitale.com${image}`;
     setMetaTag('property', 'og:title', title);
     setMetaTag('property', 'og:description', description);
     setMetaTag('property', 'og:type', type);
     setMetaTag('property', 'og:url', url);
-    const absoluteImage = image.startsWith('http') ? image : `${window.location.origin}${image}`;
     setMetaTag('property', 'og:image', absoluteImage);
+    setMetaTag('property', 'og:locale', 'en_US');
 
     // Twitter
     setMetaTag('name', 'twitter:card', 'summary_large_image');

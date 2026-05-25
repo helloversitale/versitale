@@ -19,11 +19,17 @@ const ArticleDetail = () => {
     "@type": "Article",
     "headline": article.title,
     "description": article.excerpt,
+    "url": `https://versitale.com/articles/${article.slug}`,
+    "image": {
+      "@type": "ImageObject",
+      "url": article.image || "https://versitale.com/versitale-logo.png"
+    },
     "author": {
       "@type": "Organization",
       "name": article.author
     },
     "datePublished": new Date(article.date).toISOString(),
+    "dateModified": new Date(article.date).toISOString(),
     "publisher": {
       "@type": "Organization",
       "name": "Versitale",
@@ -31,7 +37,36 @@ const ArticleDetail = () => {
         "@type": "ImageObject",
         "url": "https://versitale.com/versitale-logo.png"
       }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://versitale.com/articles/${article.slug}`
     }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://versitale.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Articles",
+        "item": "https://versitale.com/articles"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": article.title,
+        "item": `https://versitale.com/articles/${article.slug}`
+      }
+    ]
   };
 
   return (
@@ -43,6 +78,7 @@ const ArticleDetail = () => {
         type="article"
       />
       <StructuredData data={articleSchema} />
+      <StructuredData data={breadcrumbSchema} />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
       </div>

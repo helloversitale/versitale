@@ -4,6 +4,7 @@ export const articles = [
     slug: "why-aruba-businesses-need-modern-websites",
     title: "Why Every Business in Aruba Needs a Modern Website in 2026",
     excerpt: "Tourist behavior is changing. If your Aruba business isn't easily discoverable online with a mobile-optimized experience, you're missing out on significant revenue.",
+    image: "https://versitale.com/versitale-logo.png",
     content: `
       <h2>The Shift in Tourist and Local Behavior</h2>
       <p>Aruba sees millions of tourists annually, and locals are heavily relying on their smartphones to find everything from restaurants to home services. A modern website is no longer a luxury; it is the fundamental digital storefront of your business.</p>
@@ -26,6 +27,7 @@ export const articles = [
     slug: "seo-best-practices-for-aruba",
     title: "Local SEO Best Practices for Aruba We Use at Versitale",
     excerpt: "Learn how we optimize websites specifically for the Aruba market to ensure businesses rank highly on Google for local and tourist searches.",
+    image: "https://versitale.com/versitale-logo.png",
     content: `
       <h2>Understanding Local Intent</h2>
       <p>When someone in Aruba searches for "best plumber near me" or "luxury car rental Oranjestad," Google uses local signals to deliver the best results. Our first step is ensuring your site clearly defines its service areas and physical location.</p>
@@ -48,6 +50,7 @@ export const articles = [
     slug: "website-as-a-service-explained",
     title: "Website as a Service (WaaS) Explained: The Better Alternative",
     excerpt: "Why paying thousands of florins upfront for a website is outdated, and why Versitale's subscription model is the future for small businesses.",
+    image: "https://versitale.com/versitale-logo.png",
     content: `
       <h2>The Old Model is Broken</h2>
       <p>Traditionally, web agencies charge a massive upfront fee to build a website. A few months later, the business needs a change, but the agency is gone or demands an exorbitant hourly rate to make simple updates. As a result, the website becomes outdated and insecure.</p>
