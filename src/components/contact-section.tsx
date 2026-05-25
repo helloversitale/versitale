@@ -51,10 +51,14 @@ export const ContactSection = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      // Simulate API call
-      console.log("Form submitted:", data);
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("Submission failed");
+
       toast.success("Consultation Request Sent!", {
         description: "We'll get back to you within 24 hours.",
       });
