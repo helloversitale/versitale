@@ -4,15 +4,36 @@ import { articles } from "@/data/articles";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { SEO } from "@/components/seo";
+import { StructuredData } from "@/components/structured-data";
+
+const articlesBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://versitale.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Articles",
+      "item": "https://versitale.com/articles"
+    }
+  ]
+};
 
 const Articles = () => {
   return (
     <>
-      <SEO 
-        title="Web Design & Local SEO Articles | Versitale" 
-        description="Insights on web design, local SEO, and growing your business in Aruba." 
+      <SEO
+        title="Web Design & Local SEO Articles | Versitale"
+        description="Insights on web design, local SEO, and growing your business in Aruba."
         url="https://versitale.com/articles"
       />
+      <StructuredData data={articlesBreadcrumbSchema} />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>

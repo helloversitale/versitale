@@ -28,7 +28,37 @@ const localBusinessSchema = {
   },
   "url": "https://versitale.com",
   "email": "hello@versitale.com",
-  "priceRange": "$$"
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Versitale",
+  "url": "https://versitale.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://versitale.com/versitale-logo.png"
+  },
+  "email": "hello@versitale.com",
+  "description": "Versitale builds, hosts, and optimizes websites for businesses in Aruba.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Oranjestad",
+    "addressRegion": "Aruba",
+    "addressCountry": "AW"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Aruba"
+  }
 };
 
 const Index = () => {
@@ -40,6 +70,7 @@ const Index = () => {
         url="https://versitale.com"
       />
       <StructuredData data={localBusinessSchema} />
+      <StructuredData data={organizationSchema} />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>

@@ -6,6 +6,7 @@ interface SEOProps {
   url?: string;
   image?: string;
   type?: string;
+  noIndex?: boolean;
 }
 
 export const SEO = ({
@@ -13,7 +14,8 @@ export const SEO = ({
   description,
   url = "https://versitale.com",
   image = "https://versitale.com/versitale-logo.png",
-  type = "website"
+  type = "website",
+  noIndex = false
 }: SEOProps) => {
   useEffect(() => {
     document.title = title;
@@ -40,6 +42,7 @@ export const SEO = ({
 
     // Standard meta
     setMetaTag('name', 'description', description);
+    setMetaTag('name', 'robots', noIndex ? 'noindex, nofollow' : 'index, follow');
 
     // Canonical
     setCanonical(url);
@@ -59,7 +62,7 @@ export const SEO = ({
     setMetaTag('name', 'twitter:description', description);
     setMetaTag('name', 'twitter:image', absoluteImage);
 
-  }, [title, description, url, image, type]);
+  }, [title, description, url, image, type, noIndex]);
 
   return null;
 };
