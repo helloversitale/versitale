@@ -324,7 +324,7 @@ All colors MUST be HSL.
   }
 
   .animate-fade-in {
-    animation: fade-in 0.8s ease-out forwards;
+    animation: fade-in 0.8s ease-out both;
   }
 }
 
