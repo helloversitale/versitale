@@ -85,7 +85,9 @@ export const Footer = () => {
               <p>Oranjestad, Aruba</p>
             </div>
             <a
-              href="tel:+2975641740"
+              href="https://wa.me/2975641740"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block mt-4 text-muted-foreground hover:text-primary transition-colors"
             >
               +297 564 1740
