@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export const Footer = () => {
@@ -33,105 +33,77 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary/50 border-t border-border py-16 px-8 lg:px-16">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-12">
+
+          {/* Left column — Branding */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="mb-6">
               <button onClick={handleLogoClick} className="cursor-pointer">
                 <img
                   src="/LogoVersitaletransparent.png"
-                  alt="Versitale"
-                  className="h-16 w-auto object-contain hover:opacity-80 transition-opacity"
+                  alt="Versitale AI Solutions"
+                  className="h-14 w-auto object-contain hover:opacity-80 transition-opacity"
                 />
               </button>
             </div>
-            <p className="text-muted-foreground mb-4">
-              More Customers. Less Hassle.
-            </p>
+            <h2 className="text-2xl font-bold mb-4 leading-tight">
+              More Customers.<br />Less Hassle.
+            </h2>
             <p className="text-sm text-muted-foreground">
-              Versitale builds, hosts, and optimizes websites for businesses in Aruba. We get you found month after month so you can focus on running your business.
+              Built for businesses in Aruba.
             </p>
           </div>
 
+          {/* Middle column — Legal */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={() => scrollToSection('hero')}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Services
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('faq')}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  FAQ
-                </button>
-              </li>
+            <h3 className="font-bold text-lg mb-4 text-primary">Legal</h3>
+            <ul className="space-y-3">
               <li>
                 <Link
-                  to="/articles"
-                  className="text-muted-foreground hover:text-primary transition-colors block"
+                  to="/privacy-policy"
+                  className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Articles
+                  Privacy Policy
                 </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('contact')}
+                <Link
+                  to="/terms-of-service"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Contact
-                </button>
+                  Terms of Service
+                </Link>
               </li>
             </ul>
           </div>
 
+          {/* Right column — Company info */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Contact Info</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <a
-                  href="mailto:hello@versitale.com"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  hello@versitale.com
-                </a>
-              </li>
-              <li className="text-sm text-muted-foreground">
-                Oranjestad, Aruba
-              </li>
-            </ul>
+            <h3 className="font-bold text-lg mb-4">Versitale AI Solutions</h3>
+            <div className="space-y-2 text-muted-foreground">
+              <p>Madiki 40</p>
+              <p>Oranjestad, Aruba</p>
+            </div>
+            <a
+              href="tel:+2975641740"
+              className="block mt-4 text-muted-foreground hover:text-primary transition-colors"
+            >
+              +297 564 1740
+            </a>
+            <a
+              href="mailto:hello@versitale.com"
+              className="block mt-2 text-muted-foreground hover:text-primary transition-colors"
+            >
+              hello@versitale.com
+            </a>
           </div>
 
         </div>
 
         <div className="border-t border-border pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground text-center md:text-left">
-              © 2025 Versitale, Built in Aruba. For Aruba.
-            </p>
-            <div className="flex gap-6">
-              <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms-of-service" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-          </div>
+          <p className="text-sm text-muted-foreground text-center">
+            © 2025 Versitale AI Solutions. Built in Aruba. For Aruba.
+          </p>
         </div>
       </div>
     </footer>
