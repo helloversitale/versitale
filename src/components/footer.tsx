@@ -104,7 +104,7 @@ export const Footer = () => {
 
         <div className="border-t border-border pt-8">
           <p className="text-sm text-muted-foreground text-center">
-            © 2025 Versitale AI Solutions. Built in Aruba. For Aruba.
+            © 2026 Versitale AI Solutions. Built in Aruba. For Aruba.
           </p>
         </div>
       </div>
