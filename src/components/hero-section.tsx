@@ -28,15 +28,15 @@ export const HeroSection = () => {
         <div className="max-w-5xl">
           <h1 className="mb-10 leading-[1.2] tracking-tight">
             <span className="block text-[clamp(2.2rem,6vw,4.5rem)] lg:whitespace-nowrap font-[900] tracking-[-0.04em] gradient-text animate-fade-in pb-1 [animation-delay:0.3s]">
-              Your Customers Are Searching.
+              Web Design & SEO
             </span>
             <span className="block text-[clamp(2.2rem,6vw,4.5rem)] lg:whitespace-nowrap font-[900] tracking-[-0.04em] gradient-text animate-fade-in pb-1 [animation-delay:0.6s]">
-              Can They Find You?
+              Agency in Aruba
             </span>
           </h1>
 
           <p className="text-[1.35rem] md:text-[1.75rem] text-neutral-200 mb-12 max-w-4xl leading-[1.5] animate-fade-in [animation-delay:0.9s]">
-            Websites that get <span className="font-semibold text-white">Aruba businesses</span> found on <span className="font-semibold text-white">Google</span>.
+            Your customers are searching. <span className="font-semibold text-white">Can they find you?</span>
           </p>
 
           <div className="flex flex-row gap-4 sm:gap-6 justify-start items-center sm:items-start mb-6 animate-fade-in [animation-delay:1.2s]">

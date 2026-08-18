@@ -35,8 +35,8 @@ const Index = () => {
   return (
     <>
       <SEO 
-        title="Websites for Businesses in Aruba | Versitale" 
-        description="Versitale builds, hosts, and optimizes websites for businesses in Aruba. Get a website that brings you customers — not headaches." 
+        title="BEST Web Design & SEO Agency in Aruba - if you're looking for a Website Designer near me or Local SEO Services for your Small Business - Versitale AI Solutions is the place to be" 
+        description="Need a website that actually brings customers? We design, host, and rank websites for Aruba businesses — plus local SEO and e-commerce." 
         url="https://versitale.com"
       />
       <StructuredData data={localBusinessSchema} />
