@@ -63,12 +63,12 @@ export const Header = () => {
             >
               Home
             </button>
-            <button
-              onClick={() => scrollToSection('services')}
+            <Link
+              to="/services"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Services
-            </button>
+            </Link>
             <button
               onClick={() => scrollToSection('faq')}
               className="text-foreground hover:text-primary transition-colors font-medium"
@@ -117,12 +117,13 @@ export const Header = () => {
               >
                 Home
               </button>
-              <button
-                onClick={() => scrollToSection('services')}
+              <Link
+                to="/services"
                 className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Services
-              </button>
+              </Link>
               <button
                 onClick={() => scrollToSection('faq')}
                 className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
