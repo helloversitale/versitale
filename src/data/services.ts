@@ -68,7 +68,7 @@ export const services: Service[] = [
   {
     id: 1,
     slug: "website-designer",
-    title: "Website Designer",
+    title: "Website Design",
     tagline: "Custom websites designed and built for Aruba businesses",
     excerpt:
       "A website that looks the way your business deserves to look, loads fast on every phone, and turns visitors into paying customers.",
