@@ -31,7 +31,7 @@ export const HeroSection = () => {
               Web Design & SEO
             </span>
             <span className="block text-[clamp(2.2rem,6vw,4.5rem)] lg:whitespace-nowrap font-[900] tracking-[-0.04em] gradient-text animate-fade-in pb-1 [animation-delay:0.6s]">
-              Agency in Aruba
+              Services in Aruba
             </span>
           </h1>
 
