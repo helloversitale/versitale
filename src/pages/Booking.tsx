@@ -50,7 +50,7 @@ const Booking = () => {
   return (
     <>
       <SEO 
-        title="Book a Discovery Call | Versitale" 
+        title="Book a Discovery Call | Versitale AI Solutions" 
         description="Schedule a 30-minute discovery call with us to see how we can build a revenue-generating website for your Aruba business." 
         url="https://versitale.com/booking"
       />

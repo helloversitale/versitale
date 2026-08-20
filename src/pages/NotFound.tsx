@@ -25,7 +25,7 @@ const NotFound = () => {
   return (
     <>
       <SEO
-        title="Page Not Found | Versitale"
+        title="Page Not Found | Versitale AI Solutions"
         description="The page you're looking for doesn't exist. Return to Versitale's homepage."
         url="https://versitale.com"
       />

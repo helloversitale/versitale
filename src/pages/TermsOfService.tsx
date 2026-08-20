@@ -11,7 +11,7 @@ export default function TermsOfService() {
   return (
     <>
       <SEO 
-        title="Terms of Service | Versitale" 
+        title="Terms of Service | Versitale AI Solutions" 
         description="Our terms regarding website creation, maintenance subscriptions, and client responsibilities at Versitale." 
         url="https://versitale.com/terms-of-service"
       />

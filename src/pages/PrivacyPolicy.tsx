@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <SEO 
-        title="Privacy Policy | Versitale" 
+        title="Privacy Policy | Versitale AI Solutions" 
         description="Read how Versitale handles and protects your data inside our Privacy Policy." 
         url="https://versitale.com/privacy-policy"
       />

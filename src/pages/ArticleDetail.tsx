@@ -32,7 +32,7 @@ const ArticleDetail = () => {
     "dateModified": new Date(article.date).toISOString(),
     "publisher": {
       "@type": "Organization",
-      "name": "Versitale",
+      "name": "Versitale AI Solutions",
       "logo": {
         "@type": "ImageObject",
         "url": "https://versitale.com/versitale-logo.png"
@@ -72,7 +72,7 @@ const ArticleDetail = () => {
   return (
     <>
       <SEO 
-        title={`${article.title} | Versitale`}
+        title={`${article.title} | Versitale AI Solutions`}
         description={article.excerpt}
         url={`https://versitale.com/articles/${article.slug}`}
         type="article"

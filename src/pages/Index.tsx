@@ -12,7 +12,7 @@ import { SEO } from "@/components/seo";
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Versitale",
+  "name": "Versitale AI Solutions",
   "image": "https://versitale.com/versitale-logo.png",
   "description": "Versitale builds, hosts, and optimizes websites for businesses in Aruba. Get a website that brings you customers — not headaches.",
   "address": {

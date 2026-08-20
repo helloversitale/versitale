@@ -73,7 +73,7 @@ export const services: Service[] = [
     excerpt:
       "A website that looks the way your business deserves to look, loads fast on every phone, and turns visitors into paying customers.",
     icon: Layout,
-    metaTitle: "Website Designer in Aruba | Versitale",
+    metaTitle: "Website Design in Aruba | Versitale AI Solutions",
     metaDescription:
       "Custom website design for businesses in Aruba. Mobile-first, fast, SEO-ready websites that turn visitors into customers. Designed, built, hosted and maintained by Versitale.",
     heroHeadline: "Website",
@@ -203,7 +203,7 @@ export const services: Service[] = [
     excerpt:
       "The best website in the world is worthless if nobody sees it. We get your business ranking for the searches your customers are already making.",
     icon: Search,
-    metaTitle: "SEO Services in Aruba | Local Search Optimization | Versitale",
+    metaTitle: "SEO Services in Aruba | Versitale AI Solutions",
     metaDescription:
       "Local SEO for businesses in Aruba. Rank higher on Google, win the map pack, and turn searches into customers. Keyword research, on-page SEO, Google Business Profile and monthly reporting by Versitale.",
     heroHeadline: "SEO That Gets You",
@@ -333,7 +333,7 @@ export const services: Service[] = [
     excerpt:
       "Your Google Business Profile is the first thing most people in Aruba see about you, often before your website. We turn it into a listing that ranks, convinces and gets the call.",
     icon: Building2,
-    metaTitle: "Google Business Profile Optimization in Aruba | Versitale",
+    metaTitle: "Google Business Profile Aruba | Versitale AI Solutions",
     metaDescription:
       "Google Business Profile optimization for Aruba businesses. Rank in the map pack, get more calls and directions, manage reviews and keep your listing accurate. Set up and managed by Versitale.",
     heroHeadline: "Google Business Profile",
@@ -463,7 +463,7 @@ export const services: Service[] = [
     excerpt:
       "An online store that takes payment while you sleep, handles local delivery and pickup, and is genuinely easy for you to run day to day.",
     icon: ShoppingCart,
-    metaTitle: "E-Commerce Website Development in Aruba | Versitale",
+    metaTitle: "E-Commerce Websites in Aruba | Versitale AI Solutions",
     metaDescription:
       "Online stores built for Aruba businesses. Secure checkout, local delivery and pickup, inventory management and a store you can actually run yourself. Designed, built and maintained by Versitale.",
     heroHeadline: "Sell Online,",

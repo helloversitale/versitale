@@ -39,7 +39,7 @@ const ServiceDetail = () => {
     "serviceType": service.title,
     "provider": {
       "@type": "Organization",
-      "name": "Versitale",
+      "name": "Versitale AI Solutions",
       "url": "https://versitale.com",
       "logo": {
         "@type": "ImageObject",

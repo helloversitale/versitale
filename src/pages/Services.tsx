@@ -37,7 +37,7 @@ const Services = () => {
   return (
     <>
       <SEO
-        title="Services | Web Design & Local SEO in Aruba | Versitale"
+        title="Web Design & SEO in Aruba | Versitale AI Solutions"
         description="Everything Versitale builds for businesses in Aruba: custom website design, local SEO, hosting and ongoing support. One monthly service, no upfront surprises."
         url="https://versitale.com/services"
       />

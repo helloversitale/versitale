@@ -9,7 +9,7 @@ const Articles = () => {
   return (
     <>
       <SEO 
-        title="Web Design & Local SEO Articles | Versitale" 
+        title="Web Design & SEO Articles | Versitale AI Solutions" 
         description="Insights on web design, local SEO, and growing your business in Aruba." 
         url="https://versitale.com/articles"
       />
