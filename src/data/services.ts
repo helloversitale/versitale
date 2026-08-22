@@ -77,7 +77,7 @@ export const services: Service[] = [
     metaDescription:
       "Custom website design for businesses in Aruba. Mobile-first, fast, SEO-ready websites that turn visitors into customers. Designed, built, hosted and maintained by Versitale.",
     heroHeadline: "Website",
-    heroHighlight: "Designer",
+    heroHighlight: "Design",
     heroIntro:
       "Your website is the first thing a customer sees before they ever walk through your door. We design and build it from scratch, tailored to your business in Aruba, so that first impression works in your favor.",
     highlights: [
