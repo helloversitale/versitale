@@ -71,12 +71,7 @@ const ArticleDetail = () => {
 
   return (
     <>
-      <SEO 
-        title={`${article.title} | Versitale AI Solutions`}
-        description={article.excerpt}
-        url={`https://versitale.com/articles/${article.slug}`}
-        type="article"
-      />
+      <SEO />
       <StructuredData data={articleSchema} />
       <StructuredData data={breadcrumbSchema} />
       <div className="fixed inset-0 z-0 fixed-page-background">

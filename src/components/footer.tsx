@@ -1,5 +1,5 @@
-import { Mail, Phone, MapPin } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { services } from "@/data/services";
 
 export const Footer = () => {
   const navigate = useNavigate();
@@ -33,9 +33,9 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary/50 border-t border-border py-16 px-8 lg:px-16">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-12">
 
-          {/* Left column — Branding */}
+          {/* Column 1 — Branding */}
           <div>
             <div className="mb-6">
               <button onClick={handleLogoClick} className="cursor-pointer">
@@ -54,7 +54,32 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Middle column — Legal */}
+          {/* Column 2 — Services */}
+          <div>
+            <h3 className="font-bold text-lg mb-4 text-primary">Services</h3>
+            <ul className="space-y-3">
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  to="/services"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  All Services
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3 — Legal */}
           <div>
             <h3 className="font-bold text-lg mb-4 text-primary">Legal</h3>
             <ul className="space-y-3">
@@ -77,7 +102,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Right column — Company info */}
+          {/* Column 4 — Company info */}
           <div>
             <h3 className="font-bold text-lg mb-4">Versitale AI Solutions</h3>
             <div className="space-y-2 text-muted-foreground">

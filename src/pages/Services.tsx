@@ -36,11 +36,7 @@ const Services = () => {
 
   return (
     <>
-      <SEO
-        title="Web Design & SEO in Aruba | Versitale AI Solutions"
-        description="Everything Versitale builds for businesses in Aruba: custom website design, local SEO, hosting and ongoing support. One monthly service, no upfront surprises."
-        url="https://versitale.com/services"
-      />
+      <SEO />
       <StructuredData data={servicesSchema} />
 
       <div className="fixed inset-0 z-0 fixed-page-background">

@@ -10,11 +10,7 @@ export default function TermsOfService() {
 
   return (
     <>
-      <SEO 
-        title="Terms of Service | Versitale AI Solutions" 
-        description="Our terms regarding website creation, maintenance subscriptions, and client responsibilities at Versitale." 
-        url="https://versitale.com/terms-of-service"
-      />
+      <SEO />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>

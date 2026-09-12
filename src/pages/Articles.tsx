@@ -8,11 +8,7 @@ import { SEO } from "@/components/seo";
 const Articles = () => {
   return (
     <>
-      <SEO 
-        title="Web Design & SEO Articles | Versitale AI Solutions" 
-        description="Insights on web design, local SEO, and growing your business in Aruba." 
-        url="https://versitale.com/articles"
-      />
+      <SEO />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>

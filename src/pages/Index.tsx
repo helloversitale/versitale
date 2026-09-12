@@ -34,11 +34,7 @@ const localBusinessSchema = {
 const Index = () => {
   return (
     <>
-      <SEO 
-        title="Web Design & SEO Services in Aruba | Versitale AI Solutions | Rank Higher Near Me" 
-        description="Need a website that actually brings customers? We design, host, and rank websites for Aruba businesses." 
-        url="https://versitale.com"
-      />
+      <SEO />
       <StructuredData data={localBusinessSchema} />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>

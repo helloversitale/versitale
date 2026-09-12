@@ -16,28 +16,41 @@ import ServiceDetail from "./pages/ServiceDetail";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+/**
+ * The route table. Shared by the browser entry below and by the build-time
+ * prerenderer (src/entry-server.tsx), so both render the same tree.
+ */
+export const AppRoutes = () => (
+  <Routes>
+    <Route path="/" element={<Index />} />
+    <Route path="/booking" element={<Booking />} />
+    <Route path="/services" element={<Services />} />
+    <Route path="/services/:slug" element={<ServiceDetail />} />
+    <Route path="/terms-of-service" element={<TermsOfService />} />
+    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    <Route path="/articles" element={<Articles />} />
+    <Route path="/articles/:slug" element={<ArticleDetail />} />
+    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+);
+
+/** Context providers the pages depend on. Also used during prerender. */
+export const AppProviders = ({ children }: { children: React.ReactNode }) => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:slug" element={<ServiceDetail />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/articles" element={<Articles />} />
-          <Route path="/articles/:slug" element={<ArticleDetail />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-      <SpeedInsights />
-    </TooltipProvider>
+    <TooltipProvider>{children}</TooltipProvider>
   </QueryClientProvider>
+);
+
+const App = () => (
+  <AppProviders>
+    <Toaster />
+    <Sonner />
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+    <SpeedInsights />
+  </AppProviders>
 );
 
 export default App;

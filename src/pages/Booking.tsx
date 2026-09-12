@@ -49,11 +49,7 @@ const Booking = () => {
 
   return (
     <>
-      <SEO 
-        title="Book a Discovery Call | Versitale AI Solutions" 
-        description="Schedule a 30-minute discovery call with us to see how we can build a revenue-generating website for your Aruba business." 
-        url="https://versitale.com/booking"
-      />
+      <SEO />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>

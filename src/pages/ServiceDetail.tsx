@@ -92,11 +92,7 @@ const ServiceDetail = () => {
 
   return (
     <>
-      <SEO
-        title={service.metaTitle}
-        description={service.metaDescription}
-        url={serviceUrl}
-      />
+      <SEO />
       <StructuredData data={serviceSchema} />
       <StructuredData data={breadcrumbSchema} />
       <StructuredData data={faqSchema} />

@@ -10,11 +10,7 @@ export default function PrivacyPolicy() {
 
   return (
     <>
-      <SEO 
-        title="Privacy Policy | Versitale AI Solutions" 
-        description="Read how Versitale handles and protects your data inside our Privacy Policy." 
-        url="https://versitale.com/privacy-policy"
-      />
+      <SEO />
       <div className="fixed inset-0 z-0 fixed-page-background">
         <div className="absolute inset-0 work-gradient-overlay pointer-events-none"></div>
         <div className="absolute inset-0 work-grid-pattern pointer-events-none"></div>
