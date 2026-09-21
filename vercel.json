@@ -2,6 +2,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": false,
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/index.php",
